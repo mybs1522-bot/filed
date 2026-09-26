@@ -39,7 +39,6 @@ export function GoogleDriveLinksModal({
 
   const [copied, setCopied] = useState(false)
   const [isUnlocked, setIsUnlocked] = useState(false)
-  const [fastDownloadActive, setFastDownloadActive] = useState(false)
 
   useEffect(() => {
     if (isOpen) {
@@ -56,18 +55,13 @@ export function GoogleDriveLinksModal({
           } else {
              // Reset state when opened for a non-subscribed user
              setIsUnlocked(false)
-             setFastDownloadActive(false)
           }
         } catch(e) {}
       } else {
           setIsUnlocked(false)
-          setFastDownloadActive(false)
       }
     }
   }, [isOpen])
-  const [fastProgress, setFastProgress] = useState(0)
-  const [fastSpeed, setFastSpeed] = useState(58.4)
-
   const directGdriveLink = course.googleDriveUrl || `https://drive.google.com/uc?export=download&id=1Xz9_${course.id}_direct`
 
   const handleCopyLink = () => {
@@ -84,28 +78,6 @@ export function GoogleDriveLinksModal({
       spread: 70,
       origin: { y: 0.6 },
     })
-  }
-
-  const handleStartFastDownload = () => {
-    setFastDownloadActive(true)
-    setFastProgress(0)
-
-    const interval = setInterval(() => {
-      setFastProgress((prev) => {
-        if (prev >= 100) {
-          clearInterval(interval)
-          confetti({
-            particleCount: 120,
-            spread: 90,
-            origin: { y: 0.5 },
-          })
-          return 100
-        }
-        // Random speed between 55 and 82 MB/s
-        setFastSpeed(parseFloat((55 + Math.random() * 25).toFixed(1)))
-        return prev + 5
-      })
-    }, 250)
   }
 
   return (
@@ -179,37 +151,16 @@ export function GoogleDriveLinksModal({
                 </div>
               </div>
 
-              {/* Fast Download Simulation */}
-              {!fastDownloadActive ? (
-                <button
-                  onClick={handleStartFastDownload}
-                  className="w-full py-2.5 px-4 rounded-xl bg-dropbox-blue hover:bg-blue-600 text-white font-bold text-xs flex items-center justify-center gap-2 transition-colors shadow-md hover:shadow-blue-500/25"
-                >
-                  <Download className="w-4 h-4" />
-                  <span>Start Fast Gigabit Download Now</span>
-                </button>
-              ) : (
-                <div className="p-4 rounded-xl bg-neutral-900 border border-neutral-800 space-y-2">
-                  <div className="flex items-center justify-between text-xs">
-                    <span className="font-semibold text-white">
-                      {fastProgress >= 100 ? "Download Complete! ✅" : "Downloading via High-Speed CDN..."}
-                    </span>
-                    <span className="font-mono text-blue-400 font-bold">
-                      {fastProgress >= 100 ? "4.18 GB / 4.18 GB" : `${fastSpeed} MB/s`}
-                    </span>
-                  </div>
-                  <div className="w-full h-3 bg-neutral-800 rounded-full overflow-hidden p-0.5">
-                    <div
-                      className="h-full bg-gradient-to-r from-dropbox-blue to-blue-400 rounded-full transition-all duration-300"
-                      style={{ width: `${fastProgress}%` }}
-                    />
-                  </div>
-                  <div className="flex justify-between text-[11px] text-neutral-400">
-                    <span>{fastProgress}% finished</span>
-                    <span>{fastProgress >= 100 ? "Saved to Downloads" : "ETA: 12 seconds"}</span>
-                  </div>
-                </div>
-              )}
+              {/* Fast Download Link */}
+              <a
+                href={directGdriveLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-2.5 px-4 rounded-xl bg-dropbox-blue hover:bg-blue-600 text-white font-bold text-xs flex items-center justify-center gap-2 transition-colors shadow-md hover:shadow-blue-500/25"
+              >
+                <Download className="w-4 h-4" />
+                <span>Start Fast Gigabit Download Now</span>
+              </a>
 
               <div className="pt-2 flex items-center justify-between text-xs text-neutral-400 border-t border-neutral-850">
                 <span className="flex items-center gap-1.5 text-blue-400">
