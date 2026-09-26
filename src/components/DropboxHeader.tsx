@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Search, UserPlus, Sparkles, LogIn, LogOut, ChevronDown, Menu, Settings, HelpCircle, MessageCircle } from "lucide-react"
+import { Search, UserPlus, Sparkles, LogIn, LogOut, ChevronDown, Menu, Settings, HelpCircle, MessageCircle, ShieldCheck } from "lucide-react"
 import { UserAccount } from "@/components/AuthScreen"
 import { FileDriveLogo } from "@/components/ui/FileDriveLogo"
 
@@ -13,6 +13,7 @@ interface DropboxHeaderProps {
   onLogout: () => void
   onOpenSettings?: () => void
   onOpenMobileSidebar?: () => void
+  isSubscribed?: boolean
 }
 
 export function DropboxHeader({
@@ -24,6 +25,7 @@ export function DropboxHeader({
   onLogout,
   onOpenSettings,
   onOpenMobileSidebar,
+  isSubscribed,
 }: DropboxHeaderProps) {
   const [showUserMenu, setShowUserMenu] = useState(false)
 
@@ -68,14 +70,22 @@ export function DropboxHeader({
         </button>
 
         {/* Neon 'Click to upgrade' button */}
-        <button
-          onClick={onUpgradeClick}
-          className="flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg bg-[#b4ff39] hover:bg-[#a2e633] text-neutral-950 text-[11px] sm:text-xs font-bold shadow-md shadow-[#b4ff39]/10 transition-all hover:scale-[1.02] active:scale-[0.98]"
-        >
-          <Sparkles className="w-3.5 h-3.5 text-black shrink-0" />
-          <span className="hidden sm:inline">Click to upgrade</span>
-          <span className="sm:hidden">Upgrade</span>
-        </button>
+        {!isSubscribed ? (
+          <button
+            onClick={onUpgradeClick}
+            className="flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg bg-[#b4ff39] hover:bg-[#a2e633] text-neutral-950 text-[11px] sm:text-xs font-bold shadow-md shadow-[#b4ff39]/10 transition-all hover:scale-[1.02] active:scale-[0.98]"
+          >
+            <Sparkles className="w-3.5 h-3.5 text-black shrink-0" />
+            <span className="hidden sm:inline">Click to upgrade</span>
+            <span className="sm:hidden">Upgrade</span>
+          </button>
+        ) : (
+          <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-500/10 text-emerald-400 text-[11px] sm:text-xs font-bold border border-emerald-500/20 shadow-sm select-none">
+            <ShieldCheck className="w-3.5 h-3.5 shrink-0" />
+            <span className="hidden sm:inline">VIP Active</span>
+            <span className="sm:hidden">VIP</span>
+          </div>
+        )}
 
         {/* SHOW EMAIL USERNAME IN PLACE OF SIGN IN */}
         {currentUser ? (

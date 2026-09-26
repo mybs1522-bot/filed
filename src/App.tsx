@@ -126,6 +126,21 @@ export function App() {
     if (typeof window !== "undefined" && window.location.search.includes("paypal=success")) {
       const target = courses[0]
       if (target) {
+        if (currentUser) {
+           const sub = {
+             id: `paypal-sub-${Date.now()}`,
+             userEmail: currentUser.email,
+             provider: "paypal" as const,
+             planName: "PayPal VIP (Direct CDN)",
+             billingCycle: "monthly" as const,
+             amount: 20.0,
+             currency: "USD",
+             status: "active" as const,
+             startDate: new Date().toISOString(),
+             currentPeriodEnd: new Date(Date.now() + 30 * 86400000).toISOString()
+           };
+           saveUserSubscription(sub);
+        }
         setGoogleDriveCourse(target)
         setBillingCycle("monthly")
         try {
@@ -135,7 +150,7 @@ export function App() {
         }
       }
     }
-  }, [courses])
+  }, [courses, currentUser])
 
   // Auth modal triggered when clicking download without an account
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false)
@@ -314,6 +329,9 @@ export function App() {
     return <AdminPortal onBackToApp={navigateToApp} onCourseAdded={loadCourses} />
   }
 
+  const activeSub = currentUser ? getUserSubscription(currentUser.email) : null
+  const isSubscribed = activeSub?.status === "active"
+
   // 1. Render the full FileDrive page (Open by default; signup opens when user clicks download)
   return (
     <div className="flex h-screen w-screen overflow-hidden bg-[#121212] text-neutral-100 font-sans antialiased">
@@ -329,6 +347,7 @@ export function App() {
         searchQuery={searchQuery}
         onSearchChange={setSearchQuery}
         onNewFolderClick={handleCreateNewFolder}
+        isSubscribed={isSubscribed}
       />
 
       {/* 2. Main Content Area */}
@@ -344,6 +363,7 @@ export function App() {
           onLogout={handleLogout}
           onOpenSettings={() => setIsSettingsModalOpen(true)}
           onOpenMobileSidebar={() => setIsMobileSidebarOpen(true)}
+          isSubscribed={isSubscribed}
         />
 
         {/* File Table / Course Portal (Mobile cards + Desktop table) */}

@@ -26,6 +26,7 @@ interface DropboxSidebarProps {
   searchQuery?: string
   onSearchChange?: (q: string) => void
   onNewFolderClick?: () => void
+  isSubscribed?: boolean
 }
 
 export function DropboxSidebar({
