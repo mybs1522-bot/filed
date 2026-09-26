@@ -1,0 +1,4206 @@
+import { Node } from "@/components/ui/filesystem-item"
+
+export interface Course {
+  id: string
+  name: string
+  tagline: string
+  size: string
+  sizeBytes: number
+  lastModified: string
+  access: string
+  starred?: boolean
+  googleDriveUrl: string
+  rootNode: Node
+}
+
+export const COURSES: Course[] = [
+  {
+    "id": "course-3ds-max-vray",
+    "name": "3ds-Max + Vray Complete Course",
+    "tagline": "Complete architectural 3D modeling, V-Ray materials, lighting & rendering pipeline",
+    "size": "3.26 GB",
+    "sizeBytes": 3501735511,
+    "lastModified": "Jun 12, 2023",
+    "access": "Only you",
+    "starred": true,
+    "googleDriveUrl": "https://drive.google.com/drive/folders/1C7n0_MyIeh-cHVzu2W4RVbxulNJB3B87",
+    "rootNode": {
+      "name": "3ds-Max + Vray Complete Course",
+      "nodes": [
+        {
+          "name": "1 - Course Introduction",
+          "nodes": [
+            {
+              "name": "1 - Introduction English.vtt",
+              "size": "3 KB"
+            },
+            {
+              "name": "1 - Introduction Indonesian.vtt",
+              "size": "3 KB"
+            },
+            {
+              "name": "1 - Introduction Polish.vtt",
+              "size": "3 KB"
+            },
+            {
+              "name": "1 - Introduction Romanian.vtt",
+              "size": "3 KB"
+            },
+            {
+              "name": "1 - Introduction Spanish.vtt",
+              "size": "3 KB"
+            },
+            {
+              "name": "1 - Introduction Thai.vtt",
+              "size": "5 KB"
+            },
+            {
+              "name": "1 - Introduction.mp4",
+              "size": "17.8 MB"
+            },
+            {
+              "name": "2 - Is This Course Right For You English.vtt",
+              "size": "3 KB"
+            },
+            {
+              "name": "2 - Is This Course Right For You Indonesian.vtt",
+              "size": "3 KB"
+            },
+            {
+              "name": "2 - Is This Course Right For You Polish.vtt",
+              "size": "3 KB"
+            },
+            {
+              "name": "2 - Is This Course Right For You Romanian.vtt",
+              "size": "3 KB"
+            },
+            {
+              "name": "2 - Is This Course Right For You Spanish.vtt",
+              "size": "3 KB"
+            },
+            {
+              "name": "2 - Is This Course Right For You Thai.vtt",
+              "size": "5 KB"
+            },
+            {
+              "name": "2 - Is This Course Right For You.mp4",
+              "size": "4.6 MB"
+            },
+            {
+              "name": "3 - Stay Connected With Your Instructor English.vtt",
+              "size": "3 KB"
+            },
+            {
+              "name": "3 - Stay Connected With Your Instructor Polish.vtt",
+              "size": "3 KB"
+            },
+            {
+              "name": "3 - Stay Connected With Your Instructor Spanish.vtt",
+              "size": "3 KB"
+            },
+            {
+              "name": "3 - Stay Connected With Your Instructor.mp4",
+              "size": "41.4 MB"
+            }
+          ]
+        },
+        {
+          "name": "2 - Advanced Modeling For Architecture in 3ds Max",
+          "nodes": [
+            {
+              "name": "5 - Lets Get Started English.vtt",
+              "size": "3 KB"
+            },
+            {
+              "name": "5 - Lets Get Started Indonesian.vtt",
+              "size": "3 KB"
+            },
+            {
+              "name": "5 - Lets Get Started Polish.vtt",
+              "size": "3 KB"
+            },
+            {
+              "name": "5 - Lets Get Started Romanian.vtt",
+              "size": "4 KB"
+            },
+            {
+              "name": "5 - Lets Get Started Spanish.vtt",
+              "size": "3 KB"
+            },
+            {
+              "name": "5 - Lets Get Started Thai.vtt",
+              "size": "6 KB"
+            },
+            {
+              "name": "5 - Lets Get Started.mp4",
+              "size": "6.9 MB"
+            },
+            {
+              "name": "7 - max file wall panels New.txt",
+              "size": "82 bytes"
+            },
+            {
+              "name": "7 - Model the Wall Panels Using Edit Poly Tools English.vtt",
+              "size": "8 KB"
+            },
+            {
+              "name": "7 - Model the Wall Panels Using Edit Poly Tools Indonesian.vtt",
+              "size": "8 KB"
+            },
+            {
+              "name": "7 - Model the Wall Panels Using Edit Poly Tools Polish.vtt",
+              "size": "8 KB"
+            },
+            {
+              "name": "7 - Model the Wall Panels Using Edit Poly Tools Romanian.vtt",
+              "size": "8 KB"
+            },
+            {
+              "name": "7 - Model the Wall Panels Using Edit Poly Tools Spanish.vtt",
+              "size": "8 KB"
+            },
+            {
+              "name": "7 - Model the Wall Panels Using Edit Poly Tools Thai.vtt",
+              "size": "14 KB"
+            },
+            {
+              "name": "7 - Model the Wall Panels Using Edit Poly Tools.mp4",
+              "size": "32.5 MB"
+            },
+            {
+              "name": "7 - Old Link.txt",
+              "size": "97 bytes"
+            },
+            {
+              "name": "8 - max file for wood floor modeling project New.txt",
+              "size": "81 bytes"
+            },
+            {
+              "name": "8 - Model a High Detail Plank Wood Floor English.vtt",
+              "size": "14 KB"
+            },
+            {
+              "name": "8 - Model a High Detail Plank Wood Floor Indonesian.vtt",
+              "size": "15 KB"
+            },
+            {
+              "name": "8 - Model a High Detail Plank Wood Floor Polish.vtt",
+              "size": "15 KB"
+            },
+            {
+              "name": "8 - Model a High Detail Plank Wood Floor Romanian.vtt",
+              "size": "15 KB"
+            },
+            {
+              "name": "8 - Model a High Detail Plank Wood Floor Spanish.vtt",
+              "size": "15 KB"
+            },
+            {
+              "name": "8 - Model a High Detail Plank Wood Floor Thai.vtt",
+              "size": "27 KB"
+            },
+            {
+              "name": "8 - Model a High Detail Plank Wood Floor.mp4",
+              "size": "52.2 MB"
+            },
+            {
+              "name": "8 - Old Link.txt",
+              "size": "96 bytes"
+            },
+            {
+              "name": "9 - max file for window modeling project New.txt",
+              "size": "77 bytes"
+            },
+            {
+              "name": "9 - Model a HighPoly Window Part 1 English.vtt",
+              "size": "13 KB"
+            },
+            {
+              "name": "9 - Model a HighPoly Window Part 1 Indonesian.vtt",
+              "size": "14 KB"
+            },
+            {
+              "name": "9 - Model a HighPoly Window Part 1 Polish.vtt",
+              "size": "13 KB"
+            },
+            {
+              "name": "9 - Model a HighPoly Window Part 1 Romanian.vtt",
+              "size": "14 KB"
+            },
+            {
+              "name": "9 - Model a HighPoly Window Part 1 Spanish.vtt",
+              "size": "14 KB"
+            },
+            {
+              "name": "9 - Model a HighPoly Window Part 1 Thai.vtt",
+              "size": "23 KB"
+            },
+            {
+              "name": "9 - Model a HighPoly Window Part 1.mp4",
+              "size": "44.1 MB"
+            },
+            {
+              "name": "9 - Old Link.txt",
+              "size": "92 bytes"
+            },
+            {
+              "name": "10 - Model a HighPoly Window Part 2 English.vtt",
+              "size": "6 KB"
+            },
+            {
+              "name": "10 - Model a HighPoly Window Part 2 Indonesian.vtt",
+              "size": "6 KB"
+            },
+            {
+              "name": "10 - Model a HighPoly Window Part 2 Polish.vtt",
+              "size": "5 KB"
+            },
+            {
+              "name": "10 - Model a HighPoly Window Part 2 Romanian.vtt",
+              "size": "6 KB"
+            },
+            {
+              "name": "10 - Model a HighPoly Window Part 2 Spanish.vtt",
+              "size": "6 KB"
+            },
+            {
+              "name": "10 - Model a HighPoly Window Part 2 Thai.vtt",
+              "size": "10 KB"
+            },
+            {
+              "name": "10 - Model a HighPoly Window Part 2.mp4",
+              "size": "28.2 MB"
+            },
+            {
+              "name": "11 - max file for furniture modeling project New.txt",
+              "size": "78 bytes"
+            },
+            {
+              "name": "11 - Model a Detailed Piece of Modern Furniture Part 1 English.vtt",
+              "size": "12 KB"
+            },
+            {
+              "name": "11 - Model a Detailed Piece of Modern Furniture Part 1 Indonesian.vtt",
+              "size": "13 KB"
+            },
+            {
+              "name": "11 - Model a Detailed Piece of Modern Furniture Part 1 Polish.vtt",
+              "size": "13 KB"
+            },
+            {
+              "name": "11 - Model a Detailed Piece of Modern Furniture Part 1 Romanian.vtt",
+              "size": "13 KB"
+            },
+            {
+              "name": "11 - Model a Detailed Piece of Modern Furniture Part 1 Spanish.vtt",
+              "size": "12 KB"
+            },
+            {
+              "name": "11 - Model a Detailed Piece of Modern Furniture Part 1 Thai.vtt",
+              "size": "22 KB"
+            },
+            {
+              "name": "11 - Model a Detailed Piece of Modern Furniture Part 1.mp4",
+              "size": "41.3 MB"
+            },
+            {
+              "name": "11 - Old Link.txt",
+              "size": "93 bytes"
+            }
+          ]
+        },
+        {
+          "name": "3 - Intro to Marvelous Designer for Creating Organic 3d Models",
+          "nodes": [
+            {
+              "name": "15 - Marvelous Designer Where How Do I Get It.html",
+              "size": "1 KB"
+            },
+            {
+              "name": "16 - Marvelous Designer Model a Cushion While Being Introduced to the Basic Tools.mp4",
+              "size": "75.5 MB"
+            },
+            {
+              "name": "17 - Model Naturally Folding Curtains for Your Scene Using Marvelous Designer Thai.vtt",
+              "size": "26 KB"
+            },
+            {
+              "name": "17 - Model Naturally Folding Curtains for Your Scene Using Marvelous Designer.mp4",
+              "size": "62.4 MB"
+            },
+            {
+              "name": "18 - Easily Create a Highly Realistic Rug Using Marvelous Designer English.vtt",
+              "size": "5 KB"
+            },
+            {
+              "name": "18 - Easily Create a Highly Realistic Rug Using Marvelous Designer Indonesian.vtt",
+              "size": "5 KB"
+            },
+            {
+              "name": "18 - Easily Create a Highly Realistic Rug Using Marvelous Designer Polish.vtt",
+              "size": "5 KB"
+            },
+            {
+              "name": "18 - Easily Create a Highly Realistic Rug Using Marvelous Designer Romanian.vtt",
+              "size": "5 KB"
+            },
+            {
+              "name": "18 - Easily Create a Highly Realistic Rug Using Marvelous Designer Spanish.vtt",
+              "size": "5 KB"
+            },
+            {
+              "name": "18 - Easily Create a Highly Realistic Rug Using Marvelous Designer Thai.vtt",
+              "size": "8 KB"
+            },
+            {
+              "name": "18 - Easily Create a Highly Realistic Rug Using Marvelous Designer.mp4",
+              "size": "15.5 MB"
+            }
+          ]
+        },
+        {
+          "name": "4 - Modeling Wrap Up",
+          "nodes": [
+            {
+              "name": "19 - Combined Models Ready for Entourage New.txt",
+              "size": "69 bytes"
+            },
+            {
+              "name": "19 - Final Modeling Tip English.vtt",
+              "size": "7 KB"
+            },
+            {
+              "name": "19 - Final Modeling Tip Indonesian.vtt",
+              "size": "8 KB"
+            },
+            {
+              "name": "19 - Final Modeling Tip Polish.vtt",
+              "size": "7 KB"
+            },
+            {
+              "name": "19 - Final Modeling Tip Romanian.vtt",
+              "size": "8 KB"
+            },
+            {
+              "name": "19 - Final Modeling Tip Spanish.vtt",
+              "size": "7 KB"
+            },
+            {
+              "name": "19 - Final Modeling Tip Thai.vtt",
+              "size": "14 KB"
+            },
+            {
+              "name": "19 - Final Modeling Tip.mp4",
+              "size": "19.2 MB"
+            },
+            {
+              "name": "19 - Old Link.txt",
+              "size": "84 bytes"
+            },
+            {
+              "name": "20 - Modeling Review Links To The Models I Used.html",
+              "size": "315 bytes"
+            },
+            {
+              "name": "20 - ModelingReview.pdf",
+              "size": "845 KB"
+            },
+            {
+              "name": "21 - EXTRA Download Free Additional Furniture.html",
+              "size": "1 KB"
+            },
+            {
+              "name": "21 - models.txt",
+              "size": "41 bytes"
+            }
+          ]
+        },
+        {
+          "name": "5 - Cameras and Composition",
+          "nodes": [
+            {
+              "name": "22 - Photography Theory Basic Terms Explained English.vtt",
+              "size": "4 KB"
+            },
+            {
+              "name": "22 - Photography Theory Basic Terms Explained Indonesian.vtt",
+              "size": "4 KB"
+            },
+            {
+              "name": "22 - Photography Theory Basic Terms Explained Polish.vtt",
+              "size": "4 KB"
+            },
+            {
+              "name": "22 - Photography Theory Basic Terms Explained Romanian.vtt",
+              "size": "4 KB"
+            },
+            {
+              "name": "22 - Photography Theory Basic Terms Explained Thai.vtt",
+              "size": "7 KB"
+            },
+            {
+              "name": "22 - Photography Theory Basic Terms Explained.mp4",
+              "size": "4.4 MB"
+            },
+            {
+              "name": "23 - Learn Good Composition From The Pros English.vtt",
+              "size": "10 KB"
+            },
+            {
+              "name": "23 - Learn Good Composition From The Pros Indonesian.vtt",
+              "size": "11 KB"
+            },
+            {
+              "name": "23 - Learn Good Composition From The Pros Polish.vtt",
+              "size": "11 KB"
+            },
+            {
+              "name": "23 - Learn Good Composition From The Pros Romanian.vtt",
+              "size": "11 KB"
+            },
+            {
+              "name": "23 - Learn Good Composition From The Pros Spanish.vtt",
+              "size": "11 KB"
+            },
+            {
+              "name": "23 - Learn Good Composition From The Pros Thai.vtt",
+              "size": "19 KB"
+            },
+            {
+              "name": "23 - Learn Good Composition From The Pros.mp4",
+              "size": "44.2 MB"
+            },
+            {
+              "name": "24 - All 3ds Max Physical Camera Settings Explained English.vtt",
+              "size": "22 KB"
+            },
+            {
+              "name": "24 - All 3ds Max Physical Camera Settings Explained Indonesian.vtt",
+              "size": "23 KB"
+            },
+            {
+              "name": "24 - All 3ds Max Physical Camera Settings Explained Polish.vtt",
+              "size": "23 KB"
+            },
+            {
+              "name": "24 - All 3ds Max Physical Camera Settings Explained Romanian.vtt",
+              "size": "24 KB"
+            },
+            {
+              "name": "24 - All 3ds Max Physical Camera Settings Explained Spanish.vtt",
+              "size": "23 KB"
+            },
+            {
+              "name": "24 - All 3ds Max Physical Camera Settings Explained Thai.vtt",
+              "size": "40 KB"
+            },
+            {
+              "name": "24 - All 3ds Max Physical Camera Settings Explained.mp4",
+              "size": "64.8 MB"
+            }
+          ]
+        },
+        {
+          "name": "6 - Advanced Lighting Using Vray Lights",
+          "nodes": [
+            {
+              "name": "25 - Use a Material Override Rendering to Figure Out Lighting English.vtt",
+              "size": "6 KB"
+            },
+            {
+              "name": "25 - Use a Material Override Rendering to Figure Out Lighting Indonesian.vtt",
+              "size": "6 KB"
+            },
+            {
+              "name": "25 - Use a Material Override Rendering to Figure Out Lighting Polish.vtt",
+              "size": "6 KB"
+            },
+            {
+              "name": "25 - Use a Material Override Rendering to Figure Out Lighting Romanian.vtt",
+              "size": "6 KB"
+            },
+            {
+              "name": "25 - Use a Material Override Rendering to Figure Out Lighting Spanish.vtt",
+              "size": "6 KB"
+            },
+            {
+              "name": "25 - Use a Material Override Rendering to Figure Out Lighting Thai.vtt",
+              "size": "11 KB"
+            },
+            {
+              "name": "25 - Use a Material Override Rendering to Figure Out Lighting.mp4",
+              "size": "14.7 MB"
+            },
+            {
+              "name": "26 - Get Some Awesome HDRI Maps for Free New.txt",
+              "size": "95 bytes"
+            },
+            {
+              "name": "26 - Old Link.txt",
+              "size": "110 bytes"
+            },
+            {
+              "name": "26 - Use an HDRI Light Source For an Extremely Realistic Scene English.vtt",
+              "size": "13 KB"
+            },
+            {
+              "name": "26 - Use an HDRI Light Source For an Extremely Realistic Scene Indonesian.vtt",
+              "size": "14 KB"
+            },
+            {
+              "name": "26 - Use an HDRI Light Source For an Extremely Realistic Scene Polish.vtt",
+              "size": "13 KB"
+            },
+            {
+              "name": "26 - Use an HDRI Light Source For an Extremely Realistic Scene Romanian.vtt",
+              "size": "14 KB"
+            },
+            {
+              "name": "26 - Use an HDRI Light Source For an Extremely Realistic Scene Spanish.vtt",
+              "size": "13 KB"
+            },
+            {
+              "name": "26 - Use an HDRI Light Source For an Extremely Realistic Scene Thai.vtt",
+              "size": "23 KB"
+            },
+            {
+              "name": "26 - Use an HDRI Light Source For an Extremely Realistic Scene.mp4",
+              "size": "30.2 MB"
+            },
+            {
+              "name": "27 - Add Interior Light to Your Scene With Vray Lights English.vtt",
+              "size": "11 KB"
+            },
+            {
+              "name": "27 - Add Interior Light to Your Scene With Vray Lights Indonesian.vtt",
+              "size": "12 KB"
+            },
+            {
+              "name": "27 - Add Interior Light to Your Scene With Vray Lights Polish.vtt",
+              "size": "11 KB"
+            },
+            {
+              "name": "27 - Add Interior Light to Your Scene With Vray Lights Romanian.vtt",
+              "size": "12 KB"
+            },
+            {
+              "name": "27 - Add Interior Light to Your Scene With Vray Lights Spanish.vtt",
+              "size": "12 KB"
+            },
+            {
+              "name": "27 - Add Interior Light to Your Scene With Vray Lights Thai.vtt",
+              "size": "20 KB"
+            },
+            {
+              "name": "27 - Add Interior Light to Your Scene With Vray Lights.mp4",
+              "size": "35.7 MB"
+            }
+          ]
+        },
+        {
+          "name": "7 - Advanced Materials",
+          "nodes": [
+            {
+              "name": "28 - Learn From Expertly Created Materials English.vtt",
+              "size": "12 KB"
+            },
+            {
+              "name": "28 - Learn From Expertly Created Materials Indonesian.vtt",
+              "size": "12 KB"
+            },
+            {
+              "name": "28 - Learn From Expertly Created Materials Polish.vtt",
+              "size": "12 KB"
+            },
+            {
+              "name": "28 - Learn From Expertly Created Materials Romanian.vtt",
+              "size": "12 KB"
+            },
+            {
+              "name": "28 - Learn From Expertly Created Materials Spanish.vtt",
+              "size": "12 KB"
+            },
+            {
+              "name": "28 - Learn From Expertly Created Materials Thai.vtt",
+              "size": "21 KB"
+            },
+            {
+              "name": "28 - Learn From Expertly Created Materials.mp4",
+              "size": "19.6 MB"
+            },
+            {
+              "name": "29 - UVW Mapping for Our Furniture Model English.vtt",
+              "size": "11 KB"
+            },
+            {
+              "name": "29 - UVW Mapping for Our Furniture Model Indonesian.vtt",
+              "size": "11 KB"
+            },
+            {
+              "name": "29 - UVW Mapping for Our Furniture Model Polish.vtt",
+              "size": "11 KB"
+            },
+            {
+              "name": "29 - UVW Mapping for Our Furniture Model Romanian.vtt",
+              "size": "11 KB"
+            },
+            {
+              "name": "29 - UVW Mapping for Our Furniture Model Spanish.vtt",
+              "size": "11 KB"
+            },
+            {
+              "name": "29 - UVW Mapping for Our Furniture Model Thai.vtt",
+              "size": "19 KB"
+            },
+            {
+              "name": "29 - UVW Mapping for Our Furniture Model.mp4",
+              "size": "47.1 MB"
+            },
+            {
+              "name": "30 - Create Your Own Photoreal Tileable Maps in Photoshop English.vtt",
+              "size": "12 KB"
+            },
+            {
+              "name": "30 - Create Your Own Photoreal Tileable Maps in Photoshop Indonesian.vtt",
+              "size": "13 KB"
+            },
+            {
+              "name": "30 - Create Your Own Photoreal Tileable Maps in Photoshop Polish.vtt",
+              "size": "13 KB"
+            },
+            {
+              "name": "30 - Create Your Own Photoreal Tileable Maps in Photoshop Romanian.vtt",
+              "size": "13 KB"
+            },
+            {
+              "name": "30 - Create Your Own Photoreal Tileable Maps in Photoshop Spanish.vtt",
+              "size": "13 KB"
+            },
+            {
+              "name": "30 - Create Your Own Photoreal Tileable Maps in Photoshop Thai.vtt",
+              "size": "22 KB"
+            },
+            {
+              "name": "30 - Create Your Own Photoreal Tileable Maps in Photoshop.mp4",
+              "size": "33.3 MB"
+            },
+            {
+              "name": "30 - Old Link.txt",
+              "size": "93 bytes"
+            },
+            {
+              "name": "30 - Texture downloads New.txt",
+              "size": "78 bytes"
+            },
+            {
+              "name": "31 - Finished Maps New.txt",
+              "size": "78 bytes"
+            },
+            {
+              "name": "31 - Generate Your Other Maps Reflection Bump Etc English.vtt",
+              "size": "5 KB"
+            },
+            {
+              "name": "31 - Generate Your Other Maps Reflection Bump Etc Indonesian.vtt",
+              "size": "6 KB"
+            },
+            {
+              "name": "31 - Generate Your Other Maps Reflection Bump Etc Polish.vtt",
+              "size": "5 KB"
+            },
+            {
+              "name": "31 - Generate Your Other Maps Reflection Bump Etc Romanian.vtt",
+              "size": "6 KB"
+            },
+            {
+              "name": "31 - Generate Your Other Maps Reflection Bump Etc Spanish.vtt",
+              "size": "6 KB"
+            },
+            {
+              "name": "31 - Generate Your Other Maps Reflection Bump Etc Thai.vtt",
+              "size": "10 KB"
+            },
+            {
+              "name": "31 - Generate Your Other Maps Reflection Bump Etc.mp4",
+              "size": "13.2 MB"
+            },
+            {
+              "name": "31 - Old Link.txt",
+              "size": "93 bytes"
+            },
+            {
+              "name": "32 - Create a Photorealistic Vray Material English.vtt",
+              "size": "23 KB"
+            },
+            {
+              "name": "32 - Create a Photorealistic Vray Material Indonesian.vtt",
+              "size": "24 KB"
+            },
+            {
+              "name": "32 - Create a Photorealistic Vray Material Polish.vtt",
+              "size": "24 KB"
+            },
+            {
+              "name": "32 - Create a Photorealistic Vray Material Romanian.vtt",
+              "size": "25 KB"
+            },
+            {
+              "name": "32 - Create a Photorealistic Vray Material Spanish.vtt",
+              "size": "24 KB"
+            },
+            {
+              "name": "32 - Create a Photorealistic Vray Material Thai.vtt",
+              "size": "43 KB"
+            },
+            {
+              "name": "32 - Create a Photorealistic Vray Material.mp4",
+              "size": "67 MB"
+            },
+            {
+              "name": "32 - Grunge Map New.txt",
+              "size": "72 bytes"
+            },
+            {
+              "name": "32 - Old Link.txt",
+              "size": "87 bytes"
+            },
+            {
+              "name": "33 - Grunge Map New.txt",
+              "size": "72 bytes"
+            },
+            {
+              "name": "33 - Old Link.txt",
+              "size": "87 bytes"
+            },
+            {
+              "name": "33 - Stainless Steel Material English.vtt",
+              "size": "13 KB"
+            },
+            {
+              "name": "33 - Stainless Steel Material Indonesian.vtt",
+              "size": "14 KB"
+            },
+            {
+              "name": "33 - Stainless Steel Material Polish.vtt",
+              "size": "14 KB"
+            },
+            {
+              "name": "33 - Stainless Steel Material Romanian.vtt",
+              "size": "14 KB"
+            },
+            {
+              "name": "33 - Stainless Steel Material Spanish.vtt",
+              "size": "14 KB"
+            },
+            {
+              "name": "33 - Stainless Steel Material Thai.vtt",
+              "size": "24 KB"
+            },
+            {
+              "name": "33 - Stainless Steel Material.mp4",
+              "size": "44.6 MB"
+            }
+          ]
+        },
+        {
+          "name": "8 - Advanced Rendering",
+          "nodes": [
+            {
+              "name": "34 - Vray Render Settings What You Need To Know English.vtt",
+              "size": "25 KB"
+            },
+            {
+              "name": "34 - Vray Render Settings What You Need To Know Indonesian.vtt",
+              "size": "26 KB"
+            },
+            {
+              "name": "34 - Vray Render Settings What You Need To Know Polish.vtt",
+              "size": "26 KB"
+            },
+            {
+              "name": "34 - Vray Render Settings What You Need To Know Romanian.vtt",
+              "size": "26 KB"
+            },
+            {
+              "name": "34 - Vray Render Settings What You Need To Know Spanish.vtt",
+              "size": "26 KB"
+            },
+            {
+              "name": "34 - Vray Render Settings What You Need To Know Thai.vtt",
+              "size": "47 KB"
+            },
+            {
+              "name": "34 - Vray Render Settings What You Need To Know.mp4",
+              "size": "57.7 MB"
+            },
+            {
+              "name": "35 - Linear Workflow Color Adjustments Lens Flare etc Vray Frame Buffer Explained English.vtt",
+              "size": "16 KB"
+            },
+            {
+              "name": "35 - Linear Workflow Color Adjustments Lens Flare etc Vray Frame Buffer Explained Indonesian.vtt",
+              "size": "17 KB"
+            },
+            {
+              "name": "35 - Linear Workflow Color Adjustments Lens Flare etc Vray Frame Buffer Explained Polish.vtt",
+              "size": "16 KB"
+            },
+            {
+              "name": "35 - Linear Workflow Color Adjustments Lens Flare etc Vray Frame Buffer Explained Romanian.vtt",
+              "size": "17 KB"
+            },
+            {
+              "name": "35 - Linear Workflow Color Adjustments Lens Flare etc Vray Frame Buffer Explained Spanish.vtt",
+              "size": "17 KB"
+            },
+            {
+              "name": "35 - Linear Workflow Color Adjustments Lens Flare etc Vray Frame Buffer Explained Thai.vtt",
+              "size": "30 KB"
+            },
+            {
+              "name": "35 - Linear Workflow Color Adjustments Lens Flare etc Vray Frame Buffer Explained.mp4",
+              "size": "36.6 MB"
+            }
+          ]
+        },
+        {
+          "name": "9 - Atmospherics",
+          "nodes": [
+            {
+              "name": "36 - Vray Environment Fog English.vtt",
+              "size": "15 KB"
+            },
+            {
+              "name": "36 - Vray Environment Fog Indonesian.vtt",
+              "size": "16 KB"
+            },
+            {
+              "name": "36 - Vray Environment Fog Polish.vtt",
+              "size": "16 KB"
+            },
+            {
+              "name": "36 - Vray Environment Fog Romanian.vtt",
+              "size": "16 KB"
+            },
+            {
+              "name": "36 - Vray Environment Fog Spanish.vtt",
+              "size": "16 KB"
+            },
+            {
+              "name": "36 - Vray Environment Fog Thai.vtt",
+              "size": "28 KB"
+            },
+            {
+              "name": "36 - Vray Environment Fog.mp4",
+              "size": "37.6 MB"
+            }
+          ]
+        },
+        {
+          "name": "10 - Advanced PostProcessing",
+          "nodes": [
+            {
+              "name": "37 - Old Link.txt",
+              "size": "86 bytes"
+            },
+            {
+              "name": "37 - PSD Files New.txt",
+              "size": "71 bytes"
+            },
+            {
+              "name": "37 - Using Your Render Channels in Photoshop CC English.vtt",
+              "size": "15 KB"
+            },
+            {
+              "name": "37 - Using Your Render Channels in Photoshop CC Indonesian.vtt",
+              "size": "16 KB"
+            },
+            {
+              "name": "37 - Using Your Render Channels in Photoshop CC Polish.vtt",
+              "size": "15 KB"
+            },
+            {
+              "name": "37 - Using Your Render Channels in Photoshop CC Romanian.vtt",
+              "size": "16 KB"
+            },
+            {
+              "name": "37 - Using Your Render Channels in Photoshop CC Spanish.vtt",
+              "size": "15 KB"
+            },
+            {
+              "name": "37 - Using Your Render Channels in Photoshop CC Thai.vtt",
+              "size": "27 KB"
+            },
+            {
+              "name": "37 - Using Your Render Channels in Photoshop CC.mp4",
+              "size": "44 MB"
+            },
+            {
+              "name": "38 - Create Light Bloom in Photoshop English.vtt",
+              "size": "6 KB"
+            },
+            {
+              "name": "38 - Create Light Bloom in Photoshop Indonesian.vtt",
+              "size": "7 KB"
+            },
+            {
+              "name": "38 - Create Light Bloom in Photoshop Polish.vtt",
+              "size": "6 KB"
+            },
+            {
+              "name": "38 - Create Light Bloom in Photoshop Romanian.vtt",
+              "size": "6 KB"
+            },
+            {
+              "name": "38 - Create Light Bloom in Photoshop Spanish.vtt",
+              "size": "6 KB"
+            },
+            {
+              "name": "38 - Create Light Bloom in Photoshop Thai.vtt",
+              "size": "11 KB"
+            },
+            {
+              "name": "38 - Create Light Bloom in Photoshop.mp4",
+              "size": "12.9 MB"
+            },
+            {
+              "name": "39 - Apply Final Image Enhancements English.vtt",
+              "size": "17 KB"
+            },
+            {
+              "name": "39 - Apply Final Image Enhancements Indonesian.vtt",
+              "size": "18 KB"
+            },
+            {
+              "name": "39 - Apply Final Image Enhancements Polish.vtt",
+              "size": "17 KB"
+            },
+            {
+              "name": "39 - Apply Final Image Enhancements Romanian.vtt",
+              "size": "18 KB"
+            },
+            {
+              "name": "39 - Apply Final Image Enhancements Spanish.vtt",
+              "size": "17 KB"
+            },
+            {
+              "name": "39 - Apply Final Image Enhancements Thai.vtt",
+              "size": "30 KB"
+            },
+            {
+              "name": "39 - Apply Final Image Enhancements.mp4",
+              "size": "46.1 MB"
+            },
+            {
+              "name": "39 - Old Link.txt",
+              "size": "86 bytes"
+            },
+            {
+              "name": "39 - PSD Files New.txt",
+              "size": "71 bytes"
+            }
+          ]
+        },
+        {
+          "name": "11 - VRay Updates for VRay 5 and Above",
+          "nodes": [
+            {
+              "name": "40 - VRay 5 New Features English.vtt",
+              "size": "18 KB"
+            },
+            {
+              "name": "40 - VRay 5 New Features Polish.vtt",
+              "size": "18 KB"
+            },
+            {
+              "name": "40 - VRay 5 New Features Spanish.vtt",
+              "size": "19 KB"
+            },
+            {
+              "name": "40 - VRay 5 New Features.mp4",
+              "size": "153.2 MB"
+            },
+            {
+              "name": "41 - VRay 5 Update 2 New Features English.vtt",
+              "size": "21 KB"
+            },
+            {
+              "name": "41 - VRay 5 Update 2 New Features Polish.vtt",
+              "size": "21 KB"
+            },
+            {
+              "name": "41 - VRay 5 Update 2 New Features Spanish.vtt",
+              "size": "22 KB"
+            },
+            {
+              "name": "41 - VRay 5 Update 2 New Features.mp4",
+              "size": "169 MB"
+            },
+            {
+              "name": "42 - VRay Cosmos and Material Library English.vtt",
+              "size": "19 KB"
+            },
+            {
+              "name": "42 - VRay Cosmos and Material Library Polish.vtt",
+              "size": "20 KB"
+            },
+            {
+              "name": "42 - VRay Cosmos and Material Library Spanish.vtt",
+              "size": "20 KB"
+            },
+            {
+              "name": "42 - VRay Cosmos and Material Library.mp4",
+              "size": "138.4 MB"
+            }
+          ]
+        },
+        {
+          "name": "12 - Interior Project II With Latest VRay Features",
+          "nodes": [
+            {
+              "name": "43 - Download and Explore My Model English.vtt",
+              "size": "10 KB"
+            },
+            {
+              "name": "43 - Download and Explore My Model Polish.vtt",
+              "size": "10 KB"
+            },
+            {
+              "name": "43 - Download and Explore My Model Spanish.vtt",
+              "size": "10 KB"
+            },
+            {
+              "name": "43 - Download and Explore My Model.mp4",
+              "size": "105.5 MB"
+            },
+            {
+              "name": "43 - Download the Project Model Here.txt",
+              "size": "58 bytes"
+            },
+            {
+              "name": "44 - Introduction to VRay Cosmos English.vtt",
+              "size": "5 KB"
+            },
+            {
+              "name": "44 - Introduction to VRay Cosmos Polish.vtt",
+              "size": "5 KB"
+            },
+            {
+              "name": "44 - Introduction to VRay Cosmos Spanish.vtt",
+              "size": "5 KB"
+            },
+            {
+              "name": "44 - Introduction to VRay Cosmos.mp4",
+              "size": "42.4 MB"
+            },
+            {
+              "name": "45 - Setup Camera and Lighting English.vtt",
+              "size": "14 KB"
+            },
+            {
+              "name": "45 - Setup Camera and Lighting Polish.vtt",
+              "size": "14 KB"
+            },
+            {
+              "name": "45 - Setup Camera and Lighting Spanish.vtt",
+              "size": "15 KB"
+            },
+            {
+              "name": "45 - Setup Camera and Lighting.mp4",
+              "size": "135.3 MB"
+            },
+            {
+              "name": "46 - Depth of Field English.vtt",
+              "size": "11 KB"
+            },
+            {
+              "name": "46 - Depth of Field Polish.vtt",
+              "size": "11 KB"
+            },
+            {
+              "name": "46 - Depth of Field Spanish.vtt",
+              "size": "12 KB"
+            },
+            {
+              "name": "46 - Depth of Field.mp4",
+              "size": "101 MB"
+            },
+            {
+              "name": "47 - Introduction to VRay Lightmix English.vtt",
+              "size": "6 KB"
+            },
+            {
+              "name": "47 - Introduction to VRay Lightmix Polish.vtt",
+              "size": "7 KB"
+            },
+            {
+              "name": "47 - Introduction to VRay Lightmix Spanish.vtt",
+              "size": "7 KB"
+            },
+            {
+              "name": "47 - Introduction to VRay Lightmix.mp4",
+              "size": "60.7 MB"
+            },
+            {
+              "name": "48 - Composing a Shot Think Like a Photographer English.vtt",
+              "size": "11 KB"
+            },
+            {
+              "name": "48 - Composing a Shot Think Like a Photographer Polish.vtt",
+              "size": "11 KB"
+            },
+            {
+              "name": "48 - Composing a Shot Think Like a Photographer Spanish.vtt",
+              "size": "11 KB"
+            },
+            {
+              "name": "48 - Composing a Shot Think Like a Photographer.mp4",
+              "size": "106.3 MB"
+            },
+            {
+              "name": "49 - Lens Effects and PostProcessing With The New VRay Frame Buffer English.vtt",
+              "size": "19 KB"
+            },
+            {
+              "name": "49 - Lens Effects and PostProcessing With The New VRay Frame Buffer Polish.vtt",
+              "size": "19 KB"
+            },
+            {
+              "name": "49 - Lens Effects and PostProcessing With The New VRay Frame Buffer Spanish.vtt",
+              "size": "19 KB"
+            },
+            {
+              "name": "49 - Lens Effects and PostProcessing With The New VRay Frame Buffer.mp4",
+              "size": "166.8 MB"
+            },
+            {
+              "name": "50 - More Composition English.vtt",
+              "size": "9 KB"
+            },
+            {
+              "name": "50 - More Composition Polish.vtt",
+              "size": "9 KB"
+            },
+            {
+              "name": "50 - More Composition Spanish.vtt",
+              "size": "10 KB"
+            },
+            {
+              "name": "50 - More Composition.mp4",
+              "size": "99.1 MB"
+            },
+            {
+              "name": "51 - Staging Your Scene With Cosmos Assets English.vtt",
+              "size": "10 KB"
+            },
+            {
+              "name": "51 - Staging Your Scene With Cosmos Assets Polish.vtt",
+              "size": "11 KB"
+            },
+            {
+              "name": "51 - Staging Your Scene With Cosmos Assets Spanish.vtt",
+              "size": "11 KB"
+            },
+            {
+              "name": "51 - Staging Your Scene With Cosmos Assets.mp4",
+              "size": "110.6 MB"
+            },
+            {
+              "name": "52 - Exterior Lighting English.vtt",
+              "size": "9 KB"
+            },
+            {
+              "name": "52 - Exterior Lighting Polish.vtt",
+              "size": "10 KB"
+            },
+            {
+              "name": "52 - Exterior Lighting Spanish.vtt",
+              "size": "10 KB"
+            },
+            {
+              "name": "52 - Exterior Lighting.mp4",
+              "size": "91.5 MB"
+            },
+            {
+              "name": "53 - My Finished Scene English.vtt",
+              "size": "14 KB"
+            },
+            {
+              "name": "53 - My Finished Scene Polish.vtt",
+              "size": "15 KB"
+            },
+            {
+              "name": "53 - My Finished Scene Spanish.vtt",
+              "size": "15 KB"
+            },
+            {
+              "name": "53 - My Finished Scene.mp4",
+              "size": "149.7 MB"
+            },
+            {
+              "name": "54 - Generate Your Finished Renderings English.vtt",
+              "size": "29 KB"
+            },
+            {
+              "name": "54 - Generate Your Finished Renderings Polish.vtt",
+              "size": "30 KB"
+            },
+            {
+              "name": "54 - Generate Your Finished Renderings Spanish.vtt",
+              "size": "30 KB"
+            },
+            {
+              "name": "54 - Generate Your Finished Renderings.mp4",
+              "size": "273.7 MB"
+            },
+            {
+              "name": "55 - PostProcessing Using Photoshop and Camera RAW Filter English.vtt",
+              "size": "17 KB"
+            }
+          ]
+        },
+        {
+          "name": "13 - ADDITIONAL PROJECTS",
+          "nodes": [
+            {
+              "name": "57 - The Easiest Way To Wrap Your Head Around UVW Unwrapping English.vtt",
+              "size": "11 KB"
+            },
+            {
+              "name": "57 - The Easiest Way To Wrap Your Head Around UVW Unwrapping Polish.vtt",
+              "size": "11 KB"
+            },
+            {
+              "name": "57 - The Easiest Way To Wrap Your Head Around UVW Unwrapping Spanish.vtt",
+              "size": "11 KB"
+            },
+            {
+              "name": "57 - The Easiest Way To Wrap Your Head Around UVW Unwrapping.mp4",
+              "size": "113.2 MB"
+            },
+            {
+              "name": "58 - Using Marvelous Designer and ReTopo Tools To Make Perfect Cushions English.vtt",
+              "size": "22 KB"
+            },
+            {
+              "name": "58 - Using Marvelous Designer and ReTopo Tools To Make Perfect Cushions Polish.vtt",
+              "size": "23 KB"
+            },
+            {
+              "name": "58 - Using Marvelous Designer and ReTopo Tools To Make Perfect Cushions Spanish.vtt",
+              "size": "23 KB"
+            },
+            {
+              "name": "58 - Using Marvelous Designer and ReTopo Tools To Make Perfect Cushions.mp4",
+              "size": "224.1 MB"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "course-autocad-complete",
+    "name": "AutoCAD Complete Course",
+    "tagline": "Comprehensive 2D drafting, layout management, blocks & architectural documentation",
+    "size": "7.25 GB",
+    "sizeBytes": 7783369933,
+    "lastModified": "Jun 12, 2023",
+    "access": "Only you",
+    "starred": true,
+    "googleDriveUrl": "https://drive.google.com/drive/folders/14FMQa3L4yzfgB6FC6v_jZW8pMS6DQ7ol",
+    "rootNode": {
+      "name": "AutoCAD Complete Course",
+      "nodes": [
+        {
+          "name": "1. Introduction to AutoCAD",
+          "nodes": [
+            {
+              "name": "1. Autocad User Interface.mp4",
+              "size": "40.2 MB"
+            },
+            {
+              "name": "2. Workspace Switching in AutoCad.mp4",
+              "size": "16.1 MB"
+            },
+            {
+              "name": "3. Setting up Autocad Classic Toolbar.mp4",
+              "size": "41.2 MB"
+            },
+            {
+              "name": "4. Different ways to Create a new Drawing in AutoCAD.mp4",
+              "size": "26 MB"
+            },
+            {
+              "name": "5. Setting up Unit in AutoCAD.mp4",
+              "size": "28.8 MB"
+            },
+            {
+              "name": "6. Setting up Limit in Autocad.mp4",
+              "size": "26.8 MB"
+            },
+            {
+              "name": "7. Creating Dimension Style in AutoCAD.mp4",
+              "size": "54.5 MB"
+            },
+            {
+              "name": "8. Creating Text Style in AutoCAD.mp4",
+              "size": "14.2 MB"
+            },
+            {
+              "name": "9. Table style and Layers in Autocad.mp4",
+              "size": "23.4 MB"
+            },
+            {
+              "name": "10. Navigation Toobar in Autocad.mp4",
+              "size": "38.4 MB"
+            },
+            {
+              "name": "11. Object Selection in AutoCAD.mp4",
+              "size": "71.8 MB"
+            },
+            {
+              "name": "12. Status Bar in AutoCAD.mp4",
+              "size": "19.6 MB"
+            }
+          ]
+        },
+        {
+          "name": "2. Draw Toolbar",
+          "nodes": [
+            {
+              "name": "1. Drawing lines in AutoCAD.mp4",
+              "size": "27 MB"
+            },
+            {
+              "name": "2. Absolute Coordinate System in AutoCAD.mp4",
+              "size": "23.2 MB"
+            },
+            {
+              "name": "3. Relative Coordinate System in AutoCAD.mp4",
+              "size": "23.6 MB"
+            },
+            {
+              "name": "4. Polar Coordinate System in AutoCAD.mp4",
+              "size": "37.1 MB"
+            },
+            {
+              "name": "5. Polyline in AutoCAD.mp4",
+              "size": "61.3 MB"
+            },
+            {
+              "name": "6. Circle in AutoCAD.mp4",
+              "size": "44.8 MB"
+            },
+            {
+              "name": "7. Arc Command in AutoCAD.mp4",
+              "size": "89.5 MB"
+            },
+            {
+              "name": "8. Rectangle Command in AutoCAD.mp4",
+              "size": "49.9 MB"
+            },
+            {
+              "name": "9. Polygon Command in AutoCAD.mp4",
+              "size": "36.6 MB"
+            },
+            {
+              "name": "10. Ellipse Command in AutoCAD.mp4",
+              "size": "37 MB"
+            },
+            {
+              "name": "11. Hatching in Autocad.mp4",
+              "size": "70 MB"
+            },
+            {
+              "name": "12. How to Set Origin in Hatch.mp4",
+              "size": "35.5 MB"
+            },
+            {
+              "name": "13. Associative Hatch in Autocad.mp4",
+              "size": "62.4 MB"
+            },
+            {
+              "name": "14. Creating Island Detection hatch in Autocad.mp4",
+              "size": "41 MB"
+            },
+            {
+              "name": "15. Creating Seperate Hatches in Autocad.mp4",
+              "size": "21.7 MB"
+            },
+            {
+              "name": "16. Creating Gradient in Autocad.mp4",
+              "size": "51.6 MB"
+            },
+            {
+              "name": "17. Drawing Spline in Autocad.mp4",
+              "size": "29.7 MB"
+            },
+            {
+              "name": "18. Drawing Construction Lines in Autocad.mp4",
+              "size": "30.8 MB"
+            },
+            {
+              "name": "19. Drawing Ray Lines in Autocad.mp4",
+              "size": "16 MB"
+            },
+            {
+              "name": "20. Drawing Multiple points in Autocad.mp4",
+              "size": "20.5 MB"
+            },
+            {
+              "name": "21. Dividing objects in Autocad with divide tool.mp4",
+              "size": "15.1 MB"
+            },
+            {
+              "name": "22. Using the Measure tool to create Segment in Objects.mp4",
+              "size": "27.9 MB"
+            },
+            {
+              "name": "23. Wipeout Areas in Autocad.mp4",
+              "size": "36.9 MB"
+            },
+            {
+              "name": "24. Drawing Donuts in Autocad.mp4",
+              "size": "10.8 MB"
+            },
+            {
+              "name": "25. Creating Revision Cloud of different types.mp4",
+              "size": "39.3 MB"
+            }
+          ]
+        },
+        {
+          "name": "3. Modify Toolbar",
+          "nodes": [
+            {
+              "name": "1. Move Command in Autocad.mp4",
+              "size": "43.7 MB"
+            },
+            {
+              "name": "2. Copying Objects in Autocad.mp4",
+              "size": "25 MB"
+            },
+            {
+              "name": "3. Stretching Objects in Autocad.mp4",
+              "size": "28.9 MB"
+            },
+            {
+              "name": "4. Rotate Objects in Autocad.mp4",
+              "size": "83 MB"
+            },
+            {
+              "name": "5. Mirror Objects in Autocad.mp4",
+              "size": "31.3 MB"
+            },
+            {
+              "name": "6. Scaling objects in Autocad.mp4",
+              "size": "30.8 MB"
+            },
+            {
+              "name": "7. Trimming Objects in Autocad.mp4",
+              "size": "28.7 MB"
+            },
+            {
+              "name": "8. Extending Objects in Autocad.mp4",
+              "size": "18.6 MB"
+            },
+            {
+              "name": "9. Fillet Objects in Autocad.mp4",
+              "size": "42 MB"
+            },
+            {
+              "name": "10. Chamfer Objects in Autocad.mp4",
+              "size": "38.1 MB"
+            },
+            {
+              "name": "11. Blend Curves in Autocad.mp4",
+              "size": "17 MB"
+            },
+            {
+              "name": "12. Rectangular Array in Autocad.mp4",
+              "size": "68.7 MB"
+            },
+            {
+              "name": "13. Polar Array in Autocad.mp4",
+              "size": "64.5 MB"
+            },
+            {
+              "name": "14. Path Array in Autocad.mp4",
+              "size": "29.6 MB"
+            },
+            {
+              "name": "15. Erase in Autocad.mp4",
+              "size": "9.3 MB"
+            },
+            {
+              "name": "16. Explode Objects in Autocad.mp4",
+              "size": "11.2 MB"
+            },
+            {
+              "name": "17. Offset Objects in Autocad.mp4",
+              "size": "35.4 MB"
+            }
+          ]
+        },
+        {
+          "name": "4. Advance Modify Toolbar",
+          "nodes": [
+            {
+              "name": "1. Lengthen Command in Autocad.mp4",
+              "size": "53.5 MB"
+            },
+            {
+              "name": "2. Align Command in Autocad.mp4",
+              "size": "28.2 MB"
+            },
+            {
+              "name": "3. Edit Polyline Commandin Autocad.mp4",
+              "size": "61.6 MB"
+            },
+            {
+              "name": "4. Break Command in Autocad.mp4",
+              "size": "39.2 MB"
+            },
+            {
+              "name": "5. Join Command in Autocad.mp4",
+              "size": "28.3 MB"
+            },
+            {
+              "name": "6. Copy Nested Object Command in Autocad.mp4",
+              "size": "26.6 MB"
+            },
+            {
+              "name": "7. Using Overkill command to delete Duplicate Objects.mp4",
+              "size": "19.6 MB"
+            },
+            {
+              "name": "8. Draw order command in Autocad.mp4",
+              "size": "41.9 MB"
+            }
+          ]
+        },
+        {
+          "name": "5. Status Bar in Autocad",
+          "nodes": [
+            {
+              "name": "1. Understanding Grid in Autocad.mp4",
+              "size": "87.2 MB"
+            },
+            {
+              "name": "2. Snap Mode in Autocad.mp4",
+              "size": "58.2 MB"
+            },
+            {
+              "name": "3. ORTHOMODE in Autocad.mp4",
+              "size": "13.1 MB"
+            },
+            {
+              "name": "4. Polar Tracking in Autocad.mp4",
+              "size": "27.8 MB"
+            },
+            {
+              "name": "5. Dynamic input in Autocad.mp4",
+              "size": "21.2 MB"
+            },
+            {
+              "name": "6. Object Snap in Autocad.mp4",
+              "size": "110.5 MB"
+            },
+            {
+              "name": "7. Quick properties Command in Autocad.mp4",
+              "size": "11.4 MB"
+            },
+            {
+              "name": "8. Selection Cycling in Autocad.mp4",
+              "size": "11.9 MB"
+            },
+            {
+              "name": "9. Coordinate in Status Bar.mp4",
+              "size": "6.4 MB"
+            },
+            {
+              "name": "10. Lock User Interface(Lock UI) in Autocad.mp4",
+              "size": "20.2 MB"
+            },
+            {
+              "name": "11. Clean Screen Command in Autocad.mp4",
+              "size": "8.5 MB"
+            },
+            {
+              "name": "12. Line Weight Command in Autocad.mp4",
+              "size": "8.4 MB"
+            },
+            {
+              "name": "13. Infer Constraints Command in Autocad.mp4",
+              "size": "15.6 MB"
+            }
+          ]
+        },
+        {
+          "name": "6. Utilities Ribbon in Autocad",
+          "nodes": [
+            {
+              "name": "1. Measure command and ID point in Autocad.mp4",
+              "size": "32 MB"
+            },
+            {
+              "name": "2. Measuring Area of Objects.mp4",
+              "size": "18.8 MB"
+            },
+            {
+              "name": "3. Quick Select Command.mp4",
+              "size": "12.8 MB"
+            }
+          ]
+        },
+        {
+          "name": "7. Object Properties Tab in Autocad",
+          "nodes": [
+            {
+              "name": "1. Object Color in Autocad.mp4",
+              "size": "6.9 MB"
+            },
+            {
+              "name": "2. Object Line Weight in Autocad.mp4",
+              "size": "13.7 MB"
+            },
+            {
+              "name": "3. Object Line type and Match Properties in Autocad.mp4",
+              "size": "39.5 MB"
+            },
+            {
+              "name": "4. Properties Windows and List Command in Autocad.mp4",
+              "size": "25 MB"
+            }
+          ]
+        },
+        {
+          "name": "8. Dimension in Autocad",
+          "nodes": [
+            {
+              "name": "1. Linear Dimension in Autocad.mp4",
+              "size": "37.6 MB"
+            },
+            {
+              "name": "2. Aligned Dimension in Autocad.mp4",
+              "size": "29.5 MB"
+            },
+            {
+              "name": "3. Angular dimension in Autocad.mp4",
+              "size": "23 MB"
+            },
+            {
+              "name": "4. Arc Length Dimension in Autocad.mp4",
+              "size": "8.7 MB"
+            },
+            {
+              "name": "5. Creating Dimension Radius in Autocad.mp4",
+              "size": "8.9 MB"
+            },
+            {
+              "name": "6. Creating Dimension Diameter in Autocad.mp4",
+              "size": "8.6 MB"
+            },
+            {
+              "name": "7. Jogged Dimension in Autocad.mp4",
+              "size": "19.1 MB"
+            },
+            {
+              "name": "8. Ordinate dimension in Autocad.mp4",
+              "size": "26.5 MB"
+            },
+            {
+              "name": "9. Dimension continue in Autocad.mp4",
+              "size": "21.6 MB"
+            },
+            {
+              "name": "10. Modify Dimensions in Autocad.mp4",
+              "size": "44.2 MB"
+            },
+            {
+              "name": "11. DIM command in Autocad.mp4",
+              "size": "8.8 MB"
+            },
+            {
+              "name": "12. Creating Dimension Style in Autocad.mp4",
+              "size": "124.2 MB"
+            },
+            {
+              "name": "13. Modify Dimension Style in Autocad.mp4",
+              "size": "12.2 MB"
+            },
+            {
+              "name": "14. Override Dimension Style in Autocad.mp4",
+              "size": "37.2 MB"
+            },
+            {
+              "name": "15. Compare Dimension Styles in Autocad.mp4",
+              "size": "7.8 MB"
+            },
+            {
+              "name": "16. Primary and Alternate Units in Autocad.mp4",
+              "size": "39.1 MB"
+            },
+            {
+              "name": "17. Tolerance Dimensioning in Autocad.mp4",
+              "size": "47.2 MB"
+            },
+            {
+              "name": "18. Break and Unbreak Dimension lines in Autocad.mp4",
+              "size": "15.5 MB"
+            },
+            {
+              "name": "19. Adjust Dimension spacing in Autocad.mp4",
+              "size": "15.4 MB"
+            },
+            {
+              "name": "20. Add and Remove Jogline on Dimensions.mp4",
+              "size": "8.4 MB"
+            },
+            {
+              "name": "21. Add and Remove Inspection on Dimensions.mp4",
+              "size": "33.7 MB"
+            },
+            {
+              "name": "22. Update Dimension styles in Autocad.mp4",
+              "size": "15.6 MB"
+            },
+            {
+              "name": "23. Reassociate Dimensions in Autocad.mp4",
+              "size": "14.5 MB"
+            },
+            {
+              "name": "24. Rotate Dimension text angle in Autocad.mp4",
+              "size": "9.9 MB"
+            },
+            {
+              "name": "25. Justify dimension text in Autocad.mp4",
+              "size": "6.6 MB"
+            },
+            {
+              "name": "26. Create Center Mark on Circles and Arcs.mp4",
+              "size": "27.3 MB"
+            },
+            {
+              "name": "27. Create Center Line in Autocad.mp4",
+              "size": "15.9 MB"
+            }
+          ]
+        },
+        {
+          "name": "9. Leader in Autocad",
+          "nodes": [
+            {
+              "name": "1. Creating Quick Leader Line on Objects.mp4",
+              "size": "33.8 MB"
+            },
+            {
+              "name": "2. Leader Line Settings.mp4",
+              "size": "136.5 MB"
+            },
+            {
+              "name": "3. Creating Multileader Line in Autocad.mp4",
+              "size": "79.2 MB"
+            },
+            {
+              "name": "4. Multileader Options.mp4",
+              "size": "20.6 MB"
+            },
+            {
+              "name": "5. Add and Remove Multileader.mp4",
+              "size": "31.3 MB"
+            },
+            {
+              "name": "6. Create new Multileader style.mp4",
+              "size": "65.1 MB"
+            }
+          ]
+        },
+        {
+          "name": "10. TEXT IN AUTOCAD",
+          "nodes": [
+            {
+              "name": "1. Single Line Text.mp4",
+              "size": "33.8 MB"
+            },
+            {
+              "name": "2. Creating New Text Style.mp4",
+              "size": "23 MB"
+            },
+            {
+              "name": "3. Multi Line Text.mp4",
+              "size": "61.6 MB"
+            }
+          ]
+        },
+        {
+          "name": "11. TABLES IN AUTOCAD",
+          "nodes": [
+            {
+              "name": "1. Creating Tables in Autocad.mp4",
+              "size": "137.7 MB"
+            },
+            {
+              "name": "2. Create New Table Style.mp4",
+              "size": "73.1 MB"
+            }
+          ]
+        },
+        {
+          "name": "12. LAYER IN AUTOCAD",
+          "nodes": [
+            {
+              "name": "1. Create New Layer.mp4",
+              "size": "110 MB"
+            },
+            {
+              "name": "2. Create different Layer Filter.mp4",
+              "size": "100.6 MB"
+            },
+            {
+              "name": "3. Copying Objects to a new Layer.mp4",
+              "size": "20.6 MB"
+            },
+            {
+              "name": "4. Create New Layer State.mp4",
+              "size": "35.5 MB"
+            },
+            {
+              "name": "5. Creating Layer Walk in Autocad.mp4",
+              "size": "15.4 MB"
+            },
+            {
+              "name": "6. Merge Layers in Autocad.mp4",
+              "size": "11.7 MB"
+            },
+            {
+              "name": "7. Delete Layers in Autocad.mp4",
+              "size": "19.7 MB"
+            },
+            {
+              "name": "8. Isolate Freeze Thaw Layers and more options.mp4",
+              "size": "36.1 MB"
+            }
+          ]
+        },
+        {
+          "name": "13. BLOCK IN AUTOCAD",
+          "nodes": [
+            {
+              "name": "1. Creating Block in Autocad.mp4",
+              "size": "100.7 MB"
+            },
+            {
+              "name": "2. Modify Block in Autocad.mp4",
+              "size": "18.8 MB"
+            },
+            {
+              "name": "3. How to Purge or Delete Block.mp4",
+              "size": "15.2 MB"
+            },
+            {
+              "name": "4. Insert Block.mp4",
+              "size": "37.8 MB"
+            },
+            {
+              "name": "5. Import Blocks to Autocad.mp4",
+              "size": "17.2 MB"
+            },
+            {
+              "name": "6. Write Blocks in Autocad.mp4",
+              "size": "24.2 MB"
+            },
+            {
+              "name": "7. Edit block in place.mp4",
+              "size": "22.8 MB"
+            }
+          ]
+        },
+        {
+          "name": "14. ATTRIBUTES IN BLOCK",
+          "nodes": [
+            {
+              "name": "1. Creating Block with Attributes.mp4",
+              "size": "62.7 MB"
+            },
+            {
+              "name": "2. Modify text in Block Attributes.mp4",
+              "size": "32.1 MB"
+            },
+            {
+              "name": "3. Hide Display Retain and Explode Attributes.mp4",
+              "size": "41.5 MB"
+            },
+            {
+              "name": "4. Block Attributes Manager.mp4",
+              "size": "18 MB"
+            }
+          ]
+        },
+        {
+          "name": "15. GROUP IN AUTOCAD",
+          "nodes": [
+            {
+              "name": "1. Creating and Modifying Group in Autocad.mp4",
+              "size": "57.7 MB"
+            },
+            {
+              "name": "2. Group Manager in Autocad.mp4",
+              "size": "16 MB"
+            }
+          ]
+        },
+        {
+          "name": "16. PARAMETRIC FEATURES IN AUTOCAD",
+          "nodes": [
+            {
+              "name": "1. Constraint and Unconstraint Objects.mp4",
+              "size": "25.1 MB"
+            },
+            {
+              "name": "2. Hide Show and Delete Constraint on Objects.mp4",
+              "size": "18.9 MB"
+            },
+            {
+              "name": "3. Auto Constraints Objects.mp4",
+              "size": "14.3 MB"
+            },
+            {
+              "name": "4. Geometric Constraints in Autocad.mp4",
+              "size": "90.5 MB"
+            },
+            {
+              "name": "5. Dimensional Constraints in Autocad.mp4",
+              "size": "49.5 MB"
+            },
+            {
+              "name": "6. Parameters Manager in Autocad.mp4",
+              "size": "24.6 MB"
+            }
+          ]
+        },
+        {
+          "name": "17. DYNAMIC BLOCK IN AUTOCAD",
+          "nodes": [
+            {
+              "name": "1. Introduction to Dynamic block.mp4",
+              "size": "22.3 MB"
+            },
+            {
+              "name": "2. Creating and Modifying Dynamic Block in Autocad.mp4",
+              "size": "120.3 MB"
+            },
+            {
+              "name": "3. Polar Parameters Stretch in Dynamic Block.mp4",
+              "size": "78.5 MB"
+            },
+            {
+              "name": "4. Polar Parameters Point and Rotates in Dynamic block.mp4",
+              "size": "71.5 MB"
+            },
+            {
+              "name": "5. Creating dynamic block using Constraints.mp4",
+              "size": "88.7 MB"
+            },
+            {
+              "name": "6. Creating Dynamic block using Visibility Parameter.mp4",
+              "size": "109 MB"
+            },
+            {
+              "name": "7. Creating Dynamic Block using Lookup Parameters.mp4",
+              "size": "91 MB"
+            },
+            {
+              "name": "8. Creating Dynamic block using Table.mp4",
+              "size": "128.3 MB"
+            }
+          ]
+        },
+        {
+          "name": "18. EXTERNAL REFERENCE IN AUTOCAD",
+          "nodes": [
+            {
+              "name": "1. Attach external reference file in Autocad.mp4",
+              "size": "21.6 MB"
+            },
+            {
+              "name": "2. Attach external reference pdf file in Autocad.mp4",
+              "size": "68.8 MB"
+            },
+            {
+              "name": "3. External Reference Image File in Autocad.mp4",
+              "size": "26.9 MB"
+            },
+            {
+              "name": "4. External Reference Clip.mp4",
+              "size": "47.9 MB"
+            },
+            {
+              "name": "5. External Reference Palette.mp4",
+              "size": "28.6 MB"
+            },
+            {
+              "name": "6. Compare changes in External Reference file.mp4",
+              "size": "14.4 MB"
+            }
+          ]
+        },
+        {
+          "name": "19. MODEL AND LAYOUT SPACE WITH PRINT AND PUBLISH",
+          "nodes": [
+            {
+              "name": "1. Arranging drawings for printing.mp4",
+              "size": "42.8 MB"
+            },
+            {
+              "name": "2. Model and Layout Space.mp4",
+              "size": "58.2 MB"
+            },
+            {
+              "name": "3. Page Setup Manager in Autocad.mp4",
+              "size": "92.2 MB"
+            },
+            {
+              "name": "4. Creating ViewPort in Autocad.mp4",
+              "size": "92.4 MB"
+            },
+            {
+              "name": "5. Creating Scale for Viewport in Autocad.mp4",
+              "size": "158 MB"
+            }
+          ]
+        },
+        {
+          "name": "20. SHEET SET IN AUTOCAD",
+          "nodes": [
+            {
+              "name": "1. View Manager.mp4",
+              "size": "74.3 MB"
+            },
+            {
+              "name": "2. Creating Title block and Template.mp4",
+              "size": "94.3 MB"
+            },
+            {
+              "name": "3. Creating Label Block.mp4",
+              "size": "65 MB"
+            },
+            {
+              "name": "4. Creating Callout Block.mp4",
+              "size": "177.2 MB"
+            },
+            {
+              "name": "5. Creating Sheet Set.mp4",
+              "size": "66.8 MB"
+            },
+            {
+              "name": "6. Placing Sheet Set in Drawing Template and add Label Block.mp4",
+              "size": "208.2 MB"
+            },
+            {
+              "name": "7. Adding Callout Block to the Sheet Set.mp4",
+              "size": "134.7 MB"
+            },
+            {
+              "name": "8. eTransmit Sheet Set.mp4",
+              "size": "47 MB"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "course-d5-render",
+    "name": "D5 Render Course",
+    "tagline": "Real-time ray tracing, interior & exterior lighting, environment setups & rendering",
+    "size": "5.76 GB",
+    "sizeBytes": 6189534413,
+    "lastModified": "Jun 12, 2023",
+    "access": "Only you",
+    "starred": true,
+    "googleDriveUrl": "https://drive.google.com/drive/folders/1TRFn5VhlFBiPiJjCLO4i75UnfF0gIXdZ",
+    "rootNode": {
+      "name": "D5 Render Course",
+      "nodes": [
+        {
+          "name": "1 - Introduction",
+          "nodes": [
+            {
+              "name": "1 - Introduction.mp4",
+              "size": "42.5 MB"
+            },
+            {
+              "name": "2 - Software Used.mp4",
+              "size": "19.8 MB"
+            },
+            {
+              "name": "3 - Software Part II.mp4",
+              "size": "11.5 MB"
+            }
+          ]
+        },
+        {
+          "name": "2 - Project I",
+          "nodes": [
+            {
+              "name": "4 - Creation of the Floor.mp4",
+              "size": "12.7 MB"
+            },
+            {
+              "name": "5 - Cration of the Walls.mp4",
+              "size": "33.7 MB"
+            },
+            {
+              "name": "6 - Crating Panel I.mp4",
+              "size": "15.9 MB"
+            },
+            {
+              "name": "7 - Creating Panel 2 Part I.mp4",
+              "size": "4.7 MB"
+            },
+            {
+              "name": "8 - Panel 2 Part II.mp4",
+              "size": "21 MB"
+            },
+            {
+              "name": "9 - Adding Decoration or Trim to the Panels.mp4",
+              "size": "14.1 MB"
+            },
+            {
+              "name": "10 - Panel Detail with Follow Me Tool.mp4",
+              "size": "14.1 MB"
+            },
+            {
+              "name": "11 - Groups.mp4",
+              "size": "19.3 MB"
+            }
+          ]
+        },
+        {
+          "name": "3 - Project I The Room",
+          "nodes": [
+            {
+              "name": "12 - Windows Part I.mp4",
+              "size": "53.9 MB"
+            },
+            {
+              "name": "13 - Windows Part II.mp4",
+              "size": "35.1 MB"
+            },
+            {
+              "name": "14 - Placing the Window.mp4",
+              "size": "56.7 MB"
+            },
+            {
+              "name": "15 - Color Coding the Parts.mp4",
+              "size": "42.8 MB"
+            },
+            {
+              "name": "16 - Panel Placement I.mp4",
+              "size": "61 MB"
+            },
+            {
+              "name": "17 - Panel Placement II.mp4",
+              "size": "84.9 MB"
+            },
+            {
+              "name": "18 - Panel Placement III.mp4",
+              "size": "51.1 MB"
+            },
+            {
+              "name": "19 - Final Decorative Element.mp4",
+              "size": "108 MB"
+            },
+            {
+              "name": "20 - Adding a Ceiling.mp4",
+              "size": "61 MB"
+            }
+          ]
+        },
+        {
+          "name": "4 - Project I Finishing Touches",
+          "nodes": [
+            {
+              "name": "21 - Making a Fireplace.mp4",
+              "size": "78.9 MB"
+            },
+            {
+              "name": "22 - Making a Fireplace Part II.mp4",
+              "size": "124 MB"
+            },
+            {
+              "name": "23 - Adding a Door via the Warehouse.mp4",
+              "size": "26.5 MB"
+            },
+            {
+              "name": "24 - Adding a Door Part II.mp4",
+              "size": "65.6 MB"
+            },
+            {
+              "name": "25 - Crosscheck.mp4",
+              "size": "29.5 MB"
+            }
+          ]
+        },
+        {
+          "name": "5 - D5 Render",
+          "nodes": [
+            {
+              "name": "26 - Intro to D5.mp4",
+              "size": "42.3 MB"
+            },
+            {
+              "name": "27 - D5 Materials and adding a floor Material.mp4",
+              "size": "82.8 MB"
+            },
+            {
+              "name": "28 - Making a Few Changes.mp4",
+              "size": "66.4 MB"
+            },
+            {
+              "name": "29 - Wall Materials.mp4",
+              "size": "132.6 MB"
+            },
+            {
+              "name": "30 - Additional Materials.mp4",
+              "size": "73 MB"
+            },
+            {
+              "name": "31 - Fireplace Materials.mp4",
+              "size": "49 MB"
+            }
+          ]
+        },
+        {
+          "name": "6 - D5 Render Continued",
+          "nodes": [
+            {
+              "name": "32 - The Asset Library and Furniture.mp4",
+              "size": "89.8 MB"
+            },
+            {
+              "name": "33 - Furniture Part II And Changing The View.mp4",
+              "size": "73.9 MB"
+            },
+            {
+              "name": "34 - Furniture Part III Plants and Decor.mp4",
+              "size": "96.7 MB"
+            },
+            {
+              "name": "35 - Decoration Part I.mp4",
+              "size": "58.4 MB"
+            },
+            {
+              "name": "36 - Decoration Part II and Sampling Asset Materials.mp4",
+              "size": "97.4 MB"
+            }
+          ]
+        },
+        {
+          "name": "7 - D5 Lighting",
+          "nodes": [
+            {
+              "name": "37 - Lighting.mp4",
+              "size": "153.3 MB"
+            },
+            {
+              "name": "38 - Light Types and a Teddy Bear.mp4",
+              "size": "173.7 MB"
+            },
+            {
+              "name": "39 - Setting up the Lighting for Our Scene.mp4",
+              "size": "68.9 MB"
+            },
+            {
+              "name": "40 - The Effects Tab and Scenes.mp4",
+              "size": "144.2 MB"
+            },
+            {
+              "name": "41 - Decals and Light Fixtures.mp4",
+              "size": "240.9 MB"
+            },
+            {
+              "name": "42 - Field of View FOV.mp4",
+              "size": "141.5 MB"
+            },
+            {
+              "name": "43 - Setting up The Render.mp4",
+              "size": "53.6 MB"
+            }
+          ]
+        },
+        {
+          "name": "9 - Project II",
+          "nodes": [
+            {
+              "name": "56 - Required Plugins For Project II.mp4",
+              "size": "57.3 MB"
+            },
+            {
+              "name": "57 - Creating the Floor of the Small Build.mp4",
+              "size": "40.9 MB"
+            },
+            {
+              "name": "58 - Adding an Interior Floor.mp4",
+              "size": "20 MB"
+            },
+            {
+              "name": "59 - Adding the Windows.mp4",
+              "size": "22.5 MB"
+            },
+            {
+              "name": "60 - Lattice Windows.mp4",
+              "size": "43.7 MB"
+            },
+            {
+              "name": "61 - Adding a Lattice Roof.mp4",
+              "size": "57.7 MB"
+            },
+            {
+              "name": "62 - Side Walls I.mp4",
+              "size": "40.7 MB"
+            },
+            {
+              "name": "63 - Side Walls II.mp4",
+              "size": "32.5 MB"
+            },
+            {
+              "name": "64 - Cleaning the Model Up and Deleting Stray Edges.mp4",
+              "size": "88.9 MB"
+            },
+            {
+              "name": "65 - Adding the Bathroom.mp4",
+              "size": "32.3 MB"
+            },
+            {
+              "name": "66 - Cross Check and Final Changes.mp4",
+              "size": "25.2 MB"
+            },
+            {
+              "name": "67 - Sandbox Enviroment.mp4",
+              "size": "45.6 MB"
+            },
+            {
+              "name": "68 - Landscape Part I.mp4",
+              "size": "72.8 MB"
+            },
+            {
+              "name": "69 - Landscape Part II.mp4",
+              "size": "34.9 MB"
+            },
+            {
+              "name": "70 - Landscape Part III.mp4",
+              "size": "44.2 MB"
+            },
+            {
+              "name": "71 - Fixing the Water.mp4",
+              "size": "105.6 MB"
+            }
+          ]
+        },
+        {
+          "name": "10 - D5 Enviroment Creation",
+          "nodes": [
+            {
+              "name": "72 - Landscape Materials.mp4",
+              "size": "64.8 MB"
+            },
+            {
+              "name": "73 - Trees and Layers.mp4",
+              "size": "74.6 MB"
+            },
+            {
+              "name": "74 - Painting Assets.mp4",
+              "size": "72.2 MB"
+            },
+            {
+              "name": "75 - Making Layers for Elements.mp4",
+              "size": "52.4 MB"
+            },
+            {
+              "name": "76 - Checking the Trees.mp4",
+              "size": "80.3 MB"
+            },
+            {
+              "name": "77 - Adding the Grass.mp4",
+              "size": "174.8 MB"
+            },
+            {
+              "name": "78 - Grass Updates for 23.mp4",
+              "size": "48.2 MB"
+            },
+            {
+              "name": "79 - Rocks.mp4",
+              "size": "136.7 MB"
+            },
+            {
+              "name": "80 - Continuing the Landscape.mp4",
+              "size": "111.3 MB"
+            },
+            {
+              "name": "81 - Small Build Materials.mp4",
+              "size": "102 MB"
+            },
+            {
+              "name": "82 - Fixing the Roof with SketchUV.mp4",
+              "size": "34 MB"
+            },
+            {
+              "name": "83 - Fixing the Roof with SketchUV Part II.mp4",
+              "size": "71.8 MB"
+            },
+            {
+              "name": "84 - Cross Check.mp4",
+              "size": "109.6 MB"
+            }
+          ]
+        },
+        {
+          "name": "11 - Project II Lighting and Rendering",
+          "nodes": [
+            {
+              "name": "85 - HDRI Lighting.mp4",
+              "size": "145.1 MB"
+            },
+            {
+              "name": "86 - Lighting and Fog.mp4",
+              "size": "113.3 MB"
+            },
+            {
+              "name": "87 - Lighting and Fog Fixing Errors.mp4",
+              "size": "34.9 MB"
+            },
+            {
+              "name": "88 - Effects Tab and Test Render.mp4",
+              "size": "74.7 MB"
+            },
+            {
+              "name": "89 - Critical Looking and Making Changes.mp4",
+              "size": "68.1 MB"
+            },
+            {
+              "name": "90 - Fixing the Horizon.mp4",
+              "size": "79.2 MB"
+            }
+          ]
+        },
+        {
+          "name": "12 - Project II Photoshop Post Production",
+          "nodes": [
+            {
+              "name": "91 - Initial Adjustments.mp4",
+              "size": "66.8 MB"
+            },
+            {
+              "name": "92 - Project II Camera Raw.mp4",
+              "size": "70.4 MB"
+            },
+            {
+              "name": "93 - Project II Color Mixer.mp4",
+              "size": "41.2 MB"
+            },
+            {
+              "name": "94 - Project II Depth of Field.mp4",
+              "size": "114.6 MB"
+            },
+            {
+              "name": "95 - Project II Final Steps.mp4",
+              "size": "58.3 MB"
+            },
+            {
+              "name": "96 - Project II Second Scene View.mp4",
+              "size": "67.9 MB"
+            },
+            {
+              "name": "97 - Project II Final Touches to Render II.mp4",
+              "size": "144.1 MB"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "course-enscape-render",
+    "name": "Enscape Render Course",
+    "tagline": "Real-time architectural visualization with SketchUp, Flextools & Enscape walkthroughs",
+    "size": "8.13 GB",
+    "sizeBytes": 8732540928,
+    "lastModified": "Jun 12, 2023",
+    "access": "Only you",
+    "starred": true,
+    "googleDriveUrl": "https://drive.google.com/drive/folders/1tKMwCLUTQtXhhAbXi6rMufhwil2DBBdr",
+    "rootNode": {
+      "name": "Enscape Render Course",
+      "nodes": [
+        {
+          "name": "1 - Introduction",
+          "nodes": [
+            {
+              "name": "1 - Introduction.mp4",
+              "size": "30.7 MB"
+            },
+            {
+              "name": "2 - Installing Sketchup.mp4",
+              "size": "16.7 MB"
+            }
+          ]
+        },
+        {
+          "name": "2 - Sketchup Basics for Absolute Beginners",
+          "nodes": [
+            {
+              "name": "3 - Templates in Sketchup.mp4",
+              "size": "31.8 MB"
+            },
+            {
+              "name": "4 - Introduction to Sketchup Interface Windows.mp4",
+              "size": "41.9 MB"
+            },
+            {
+              "name": "5 - Introduction to Sketchup Interface Mac.mp4",
+              "size": "59.6 MB"
+            },
+            {
+              "name": "6 - Navigating in Sketchup.mp4",
+              "size": "25.9 MB"
+            },
+            {
+              "name": "7 - The Select Tool.mp4",
+              "size": "31.2 MB"
+            },
+            {
+              "name": "8 - The Axis Lines the Line Tool.mp4",
+              "size": "57.5 MB"
+            },
+            {
+              "name": "9 - The Rectangle Tool.mp4",
+              "size": "29.6 MB"
+            },
+            {
+              "name": "10 - The Offset Tool.mp4",
+              "size": "20.7 MB"
+            },
+            {
+              "name": "11 - The Eraser Tool.mp4",
+              "size": "22.2 MB"
+            },
+            {
+              "name": "12 - Materials in Sketchup Windows.mp4",
+              "size": "55.4 MB"
+            },
+            {
+              "name": "13 - Materials in Sketchup Mac.mp4",
+              "size": "22.4 MB"
+            },
+            {
+              "name": "14 - The Push Pull Tool.mp4",
+              "size": "36.2 MB"
+            },
+            {
+              "name": "15 - Setting Up Scenes in Sketchup.mp4",
+              "size": "78.6 MB"
+            },
+            {
+              "name": "16 - Making Groups in Sketchup.mp4",
+              "size": "51.8 MB"
+            },
+            {
+              "name": "17 - Using the Move Tool.mp4",
+              "size": "40.8 MB"
+            },
+            {
+              "name": "18 - Using Shortcuts in Sketchup.mp4",
+              "size": "43.3 MB"
+            },
+            {
+              "name": "19 - The Tape Measure Tool.mp4",
+              "size": "40.1 MB"
+            },
+            {
+              "name": "20 - The Rotate Tool.mp4",
+              "size": "28.2 MB"
+            },
+            {
+              "name": "21 - The Scale Tool.mp4",
+              "size": "33.5 MB"
+            }
+          ]
+        },
+        {
+          "name": "3 - Building the Model with Sketchup Flextools",
+          "nodes": [
+            {
+              "name": "22 - Before We Start Sketchup Shortcuts the Sketchup Guru Workflow.mp4",
+              "size": "47 MB"
+            },
+            {
+              "name": "23 - Import CAD into Sketchup.mp4",
+              "size": "78.3 MB"
+            },
+            {
+              "name": "24 - Model the Shell Walls Slabs.mp4",
+              "size": "162.2 MB"
+            },
+            {
+              "name": "25 - Organizing our Model Scenes Tags.mp4",
+              "size": "40.7 MB"
+            },
+            {
+              "name": "26 - Modeling the Doors Windows the Traditional Way.mp4",
+              "size": "91.7 MB"
+            },
+            {
+              "name": "27 - Adding Dynamic Doors Windows from 3D Warehouse.mp4",
+              "size": "123.4 MB"
+            },
+            {
+              "name": "28 - Add Doors Windows with Flextools.mp4",
+              "size": "184.2 MB"
+            },
+            {
+              "name": "29 - Timelapse Adding Doors Windows with Flextools.mp4",
+              "size": "106 MB"
+            },
+            {
+              "name": "30 - Organize the Model with the Outliner Window Tags.mp4",
+              "size": "63 MB"
+            },
+            {
+              "name": "31 - Create Custom Openings with Flextools Wallcutter.mp4",
+              "size": "106.5 MB"
+            },
+            {
+              "name": "32 - Create Stairs in Sketchup the Traditional Way.mp4",
+              "size": "68.1 MB"
+            },
+            {
+              "name": "33 - Adding Stairs with Flextools The Faster Way.mp4",
+              "size": "98.7 MB"
+            },
+            {
+              "name": "34 - Facade Treatment Adding Projections.mp4",
+              "size": "61 MB"
+            },
+            {
+              "name": "35 - Facade Treatment Adding Wall Panels.mp4",
+              "size": "76.9 MB"
+            },
+            {
+              "name": "36 - Facade Treatment Add Wall Panels with Profile Builder 3.mp4",
+              "size": "146.3 MB"
+            },
+            {
+              "name": "37 - Facade Treatment Add Wall Panels with Flextools Faster Way.mp4",
+              "size": "171.8 MB"
+            },
+            {
+              "name": "38 - Adding Louvers the Manual Way.mp4",
+              "size": "69.4 MB"
+            },
+            {
+              "name": "39 - Adding Lovuers with Flextools Louvers.mp4",
+              "size": "90.8 MB"
+            },
+            {
+              "name": "40 - Create Railings the Manual Way.mp4",
+              "size": "64.3 MB"
+            },
+            {
+              "name": "41 - Create Railings with Profile Builder 3.mp4",
+              "size": "184.5 MB"
+            },
+            {
+              "name": "42 - Model the Site.mp4",
+              "size": "85.7 MB"
+            },
+            {
+              "name": "43 - Model the Site with Assemblies.mp4",
+              "size": "151.9 MB"
+            },
+            {
+              "name": "44 - Create Stair Railings the Manual Way Follow Me Tool.mp4",
+              "size": "90.8 MB"
+            },
+            {
+              "name": "45 - Create Stair Railings with Profile Builder 3.mp4",
+              "size": "44.4 MB"
+            },
+            {
+              "name": "46 - Final Adjustments of the Model.mp4",
+              "size": "53 MB"
+            }
+          ]
+        },
+        {
+          "name": "4 - Visualizing our Residence with Enscape",
+          "nodes": [
+            {
+              "name": "47 - How to use Pureref.mp4",
+              "size": "118 MB"
+            },
+            {
+              "name": "48 - Navigating in Enscape.mp4",
+              "size": "110.6 MB"
+            },
+            {
+              "name": "49 - The Enscape Toolbar.mp4",
+              "size": "282.8 MB"
+            },
+            {
+              "name": "50 - The Enscape Toolbar in Sketchup.mp4",
+              "size": "104.4 MB"
+            },
+            {
+              "name": "51 - Before We Start with Enscape.mp4",
+              "size": "73.6 MB"
+            },
+            {
+              "name": "52 - Asset Library in Enscape.mp4",
+              "size": "105.3 MB"
+            },
+            {
+              "name": "53 - Multi Asset Placement in Enscape.mp4",
+              "size": "81.7 MB"
+            },
+            {
+              "name": "54 - Custom Asset Library.mp4",
+              "size": "93.2 MB"
+            },
+            {
+              "name": "55 - Models Trees.mp4",
+              "size": "121.4 MB"
+            },
+            {
+              "name": "56 - Models Softscape.mp4",
+              "size": "242.8 MB"
+            },
+            {
+              "name": "57 - Timelapse Softscape.mp4",
+              "size": "177.7 MB"
+            },
+            {
+              "name": "58 - Models Hardscape.mp4",
+              "size": "201.5 MB"
+            },
+            {
+              "name": "59 - Models Site Models.mp4",
+              "size": "80.9 MB"
+            },
+            {
+              "name": "60 - Models Adding Entourage.mp4",
+              "size": "106.4 MB"
+            },
+            {
+              "name": "61 - Models Interior Furniture.mp4",
+              "size": "38.1 MB"
+            },
+            {
+              "name": "62 - Models Timelapse Interior Furniture More.mp4",
+              "size": "183.4 MB"
+            },
+            {
+              "name": "63 - Models Organize an Enscape Model.mp4",
+              "size": "80.1 MB"
+            },
+            {
+              "name": "64 - Materials Enscape Material Library.mp4",
+              "size": "220.6 MB"
+            },
+            {
+              "name": "65 - Materials Tips.mp4",
+              "size": "32.4 MB"
+            },
+            {
+              "name": "66 - Materials Timelapse Assigning Materials in Sketchup.mp4",
+              "size": "84.6 MB"
+            },
+            {
+              "name": "67 - Materials Timelapse Replace House Materials.mp4",
+              "size": "61.7 MB"
+            },
+            {
+              "name": "68 - Materials Timelapse Site Materials.mp4",
+              "size": "41.3 MB"
+            },
+            {
+              "name": "69 - Materials Create a Water Material.mp4",
+              "size": "260.9 MB"
+            },
+            {
+              "name": "70 - Materials Create a Glass Material.mp4",
+              "size": "55 MB"
+            },
+            {
+              "name": "71 - Camera Composition 01.mp4",
+              "size": "186.4 MB"
+            },
+            {
+              "name": "72 - Camera Composition 02.mp4",
+              "size": "170.2 MB"
+            },
+            {
+              "name": "73 - Camera Composition 03 Close Up Shots.mp4",
+              "size": "90.7 MB"
+            },
+            {
+              "name": "74 - Camera Composition 04 DOF Drone Shot.mp4",
+              "size": "137.1 MB"
+            },
+            {
+              "name": "75 - Lighting Day Lighting.mp4",
+              "size": "193.7 MB"
+            },
+            {
+              "name": "76 - Lighting Day Lighting Timelapse.mp4",
+              "size": "64.7 MB"
+            },
+            {
+              "name": "77 - Lighting Artificial Lighting Secondary Lights Sphere.mp4",
+              "size": "159.9 MB"
+            },
+            {
+              "name": "78 - Lighting Artificial Lighting 2.mp4",
+              "size": "112.8 MB"
+            },
+            {
+              "name": "79 - Lighting Artificial Lighting 3.mp4",
+              "size": "185 MB"
+            },
+            {
+              "name": "80 - Lighting Artificial Lighting 4.mp4",
+              "size": "58.3 MB"
+            },
+            {
+              "name": "81 - Lighting Artificial Lighting 5.mp4",
+              "size": "81.3 MB"
+            },
+            {
+              "name": "82 - Lighting Artificial Lighting 6.mp4",
+              "size": "81.8 MB"
+            },
+            {
+              "name": "83 - Final Adjustments.mp4",
+              "size": "176.4 MB"
+            },
+            {
+              "name": "84 - Final Adjustments Timelapse.mp4",
+              "size": "290.1 MB"
+            },
+            {
+              "name": "85 - Final Rendering.mp4",
+              "size": "122.5 MB"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "course-lumion-complete",
+    "name": "Lumion Complete Course",
+    "tagline": "Cinematic architectural visualization, landscape landscaping, weather & animation",
+    "size": "3.84 GB",
+    "sizeBytes": 4123168600,
+    "lastModified": "Jun 12, 2023",
+    "access": "Only you",
+    "starred": true,
+    "googleDriveUrl": "https://drive.google.com/drive/folders/1xJye_YytHT2xUHWnQTMRetKV3Yq2J1CU",
+    "rootNode": {
+      "name": "Lumion Complete Course",
+      "nodes": [
+        {
+          "name": "2 - GETTING STARTED",
+          "nodes": [
+            {
+              "name": "2 - GETTING STARTED English.vtt",
+              "size": "5 KB"
+            },
+            {
+              "name": "2 - GETTING STARTED.mp4",
+              "size": "64.7 MB"
+            },
+            {
+              "name": "3 - INTERFACE English.vtt",
+              "size": "8 KB"
+            },
+            {
+              "name": "3 - INTERFACE.mp4",
+              "size": "101.2 MB"
+            },
+            {
+              "name": "4 - IstherealistofallthekeyboardshortcutsinLumion11Lumion.pdf",
+              "size": "1.3 MB"
+            },
+            {
+              "name": "4 - NAVIGATION English.vtt",
+              "size": "6 KB"
+            },
+            {
+              "name": "4 - NAVIGATION.mp4",
+              "size": "126.8 MB"
+            }
+          ]
+        },
+        {
+          "name": "3 - IMPORT",
+          "nodes": [
+            {
+              "name": "5 - IMPORT LINK FROM LUMION WEBSITE.txt",
+              "size": "93 bytes"
+            },
+            {
+              "name": "5 - MATERIAL CONVERTER PLUGIN LINK.txt",
+              "size": "48 bytes"
+            },
+            {
+              "name": "5 - PREPARING THE 3D FILE English.vtt",
+              "size": "8 KB"
+            },
+            {
+              "name": "6 - importing 3ds max file to lumion English.vtt",
+              "size": "7 KB"
+            },
+            {
+              "name": "6 - importing 3ds max file to lumion.mp4",
+              "size": "115.8 MB"
+            },
+            {
+              "name": "7 - import revit English.vtt",
+              "size": "2 KB"
+            },
+            {
+              "name": "7 - import revit.mp4",
+              "size": "32.2 MB"
+            },
+            {
+              "name": "8 - import sketchup English.vtt",
+              "size": "2 KB"
+            },
+            {
+              "name": "8 - import sketchup.mp4",
+              "size": "28.8 MB"
+            }
+          ]
+        },
+        {
+          "name": "4 - INTRO TO MATERIALS",
+          "nodes": [
+            {
+              "name": "9 - Introduction to lumion materials English.vtt",
+              "size": "6 KB"
+            },
+            {
+              "name": "9 - Introduction to lumion materials.mp4",
+              "size": "106.4 MB"
+            },
+            {
+              "name": "10 - Materials Properties English.vtt",
+              "size": "12 KB"
+            }
+          ]
+        },
+        {
+          "name": "5 - SPECIAL MATERIALS",
+          "nodes": [
+            {
+              "name": "11 - GRASS AND FUR English.vtt",
+              "size": "3 KB"
+            },
+            {
+              "name": "11 - GRASS AND FUR.mp4",
+              "size": "74.6 MB"
+            },
+            {
+              "name": "12 - WATER English.vtt",
+              "size": "2 KB"
+            },
+            {
+              "name": "12 - WATER.mp4",
+              "size": "61.1 MB"
+            },
+            {
+              "name": "13 - GLASS English.vtt",
+              "size": "3 KB"
+            },
+            {
+              "name": "13 - GLASS.mp4",
+              "size": "71.7 MB"
+            },
+            {
+              "name": "14 - LEAVES English.vtt",
+              "size": "1 KB"
+            },
+            {
+              "name": "14 - LEAVES.mp4",
+              "size": "49.9 MB"
+            }
+          ]
+        },
+        {
+          "name": "6 - NEW MATERIALS",
+          "nodes": [
+            {
+              "name": "15 - NEW MATERIAL BILLBOARD English.vtt",
+              "size": "3 KB"
+            },
+            {
+              "name": "16 - NEW MATERIAL COLOR English.vtt",
+              "size": "576 bytes"
+            },
+            {
+              "name": "17 - NEW MATERIAL GLASS English.vtt",
+              "size": "5 KB"
+            },
+            {
+              "name": "18 - NEW MATERIAL GLASS ADVANCED English.vtt",
+              "size": "4 KB"
+            },
+            {
+              "name": "19 - NEW MATERIAL INVISIBLE English.vtt",
+              "size": "2 KB"
+            },
+            {
+              "name": "20 - NEW MATERIAL LANDSCAPE MATERIAL English.vtt",
+              "size": "11 KB"
+            },
+            {
+              "name": "21 - NEW MATERIAL LIGHTMAP MATERIAL English.vtt",
+              "size": "5 KB"
+            },
+            {
+              "name": "22 - NEW MATERIAL IMPORTED ANDSTANDARD MATERIAL English.vtt",
+              "size": "4 KB"
+            },
+            {
+              "name": "23 - NEW MATERIAL PBR MATERIAL English.vtt",
+              "size": "5 KB"
+            },
+            {
+              "name": "24 - NEW MATERIAL WATER MATERIAL English.vtt",
+              "size": "3 KB"
+            },
+            {
+              "name": "24 - NEW MATERIAL WATER MATERIAL.mp4",
+              "size": "81.2 MB"
+            },
+            {
+              "name": "25 - NEW MATERIAL WATER FALL MATERIAL English.vtt",
+              "size": "3 KB"
+            },
+            {
+              "name": "25 - NEW MATERIAL WATER FALL MATERIAL.mp4",
+              "size": "93.7 MB"
+            }
+          ]
+        },
+        {
+          "name": "7 - APPLYING MATERIALS",
+          "nodes": [
+            {
+              "name": "26 - MANAGING MATERIALS English.vtt",
+              "size": "5 KB"
+            },
+            {
+              "name": "26 - MANAGING MATERIALS.mp4",
+              "size": "89 MB"
+            },
+            {
+              "name": "27 - GROW CUSTOM MATERIALS AND APPLY English.vtt",
+              "size": "3 KB"
+            },
+            {
+              "name": "27 - GROW CUSTOM MATERIALS AND APPLY.mp4",
+              "size": "66.4 MB"
+            },
+            {
+              "name": "28 - APPLYING MATERIALS TO OUR SCENE English.vtt",
+              "size": "2 KB"
+            },
+            {
+              "name": "28 - APPLYING MATERIALS TO OUR SCENE.mp4",
+              "size": "79.4 MB"
+            },
+            {
+              "name": "29 - FIXING PROBLEMS English.vtt",
+              "size": "4 KB"
+            }
+          ]
+        },
+        {
+          "name": "8 - LANDSCAPE",
+          "nodes": [
+            {
+              "name": "30 - LANDSCAPE English.vtt",
+              "size": "10 KB"
+            }
+          ]
+        },
+        {
+          "name": "9 - WEATHER",
+          "nodes": [
+            {
+              "name": "31 - WEATHER English.vtt",
+              "size": "6 KB"
+            },
+            {
+              "name": "31 - WEATHER.mp4",
+              "size": "136.8 MB"
+            }
+          ]
+        },
+        {
+          "name": "10 - CONTENT LIBRARY",
+          "nodes": [
+            {
+              "name": "32 - CONTENT LIBRARY IMPORTED MODEL AND HOW TO ORGANIZE IT English.vtt",
+              "size": "5 KB"
+            },
+            {
+              "name": "33 - content library single placement tool English.vtt",
+              "size": "3 KB"
+            },
+            {
+              "name": "34 - content library mass placement tool English.vtt",
+              "size": "5 KB"
+            },
+            {
+              "name": "35 - content library cluster placement tool English.vtt",
+              "size": "2 KB"
+            },
+            {
+              "name": "36 - content library paint placement tool English.vtt",
+              "size": "4 KB"
+            },
+            {
+              "name": "37 - content library Categories English.vtt",
+              "size": "3 KB"
+            },
+            {
+              "name": "38 - Content library Select and move English.vtt",
+              "size": "4 KB"
+            },
+            {
+              "name": "39 - Content library Select and rotate English.vtt",
+              "size": "2 KB"
+            },
+            {
+              "name": "40 - Content library Select and scale English.vtt",
+              "size": "2 KB"
+            },
+            {
+              "name": "41 - Content library Select and LOCK English.vtt",
+              "size": "7 KB"
+            }
+          ]
+        },
+        {
+          "name": "11 - OPTIONS",
+          "nodes": [
+            {
+              "name": "42 - OPTIONS FOR SELECTED OBJECTS English.vtt",
+              "size": "3 KB"
+            },
+            {
+              "name": "43 - IMPORT NEW VARIATIONS English.vtt",
+              "size": "5 KB"
+            },
+            {
+              "name": "44 - ADVANCED OPTIONS FOR SELECTED OBJECTS English.vtt",
+              "size": "5 KB"
+            },
+            {
+              "name": "45 - FINALIZING OUR SCENE English.vtt",
+              "size": "2 KB"
+            }
+          ]
+        },
+        {
+          "name": "12 - RENDERING",
+          "nodes": [
+            {
+              "name": "46 - PHOTO CREATION AND RENDER English.vtt",
+              "size": "12 KB"
+            },
+            {
+              "name": "47 - VIDEOS CREATION English.vtt",
+              "size": "8 KB"
+            },
+            {
+              "name": "47 - VIDEOS CREATION.mp4",
+              "size": "147.5 MB"
+            },
+            {
+              "name": "48 - VIDEO RENDER SETTINGS English.vtt",
+              "size": "6 KB"
+            },
+            {
+              "name": "48 - VIDEO RENDER SETTINGS.mp4",
+              "size": "92.9 MB"
+            },
+            {
+              "name": "49 - ANIMATING CARS English.vtt",
+              "size": "4 KB"
+            },
+            {
+              "name": "49 - ANIMATING CARS.mp4",
+              "size": "106.3 MB"
+            },
+            {
+              "name": "50 - ANIMATING PEOPLE AND OTHER OBJECTS English.vtt",
+              "size": "5 KB"
+            },
+            {
+              "name": "50 - ANIMATING PEOPLE AND OTHER OBJECTS.mp4",
+              "size": "123.7 MB"
+            },
+            {
+              "name": "51 - PANORAMAS English.vtt",
+              "size": "7 KB"
+            },
+            {
+              "name": "51 - PANORAMAS.mp4",
+              "size": "133.1 MB"
+            }
+          ]
+        },
+        {
+          "name": "13 - CONCLUSION",
+          "nodes": [
+            {
+              "name": "52 - CONGRATULATIONS English.vtt",
+              "size": "2 KB"
+            },
+            {
+              "name": "52 - CONGRATULATIONS.mp4",
+              "size": "42.6 MB"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "course-photoshop-post-production",
+    "name": "Photoshop Post Production Course",
+    "tagline": "Professional architectural post-production, raw render grading & atmosphere",
+    "size": "3.48 GB",
+    "sizeBytes": 3736605000,
+    "lastModified": "Jun 12, 2023",
+    "access": "Only you",
+    "starred": true,
+    "googleDriveUrl": "https://drive.google.com/drive/folders/1sj09azOe65EtokPm14COF8OVeh1tUGx7",
+    "rootNode": {
+      "name": "Photoshop Post Production Course",
+      "nodes": [
+        {
+          "name": "44 - Introduction to Photoshop.mp4",
+          "size": "46.8 MB"
+        },
+        {
+          "name": "45 - Layer Elements.mp4",
+          "size": "68.2 MB"
+        },
+        {
+          "name": "46 - Masks.mp4",
+          "size": "74.5 MB"
+        },
+        {
+          "name": "47 - Layer Groups.mp4",
+          "size": "28.6 MB"
+        },
+        {
+          "name": "48 - Levels.mp4",
+          "size": "39.5 MB"
+        },
+        {
+          "name": "49 - Camera Raw I.mp4",
+          "size": "22.5 MB"
+        },
+        {
+          "name": "50 - Camera Raw II Basic Adjustments.mp4",
+          "size": "60.8 MB"
+        },
+        {
+          "name": "51 - Camera Raw III Texture and Vibrance.mp4",
+          "size": "60.6 MB"
+        },
+        {
+          "name": "52 - Color Adjustments Very Important for the Final Images to Look Good.mp4",
+          "size": "57.6 MB"
+        },
+        {
+          "name": "53 - Adding Light.mp4",
+          "size": "42.5 MB"
+        },
+        {
+          "name": "54 - Final Alterations Noise and High Pass.mp4",
+          "size": "100.8 MB"
+        },
+        {
+          "name": "55 - Finishing the Render Chromatic Abberation.mp4",
+          "size": "92.6 MB"
+        }
+      ]
+    }
+  },
+  {
+    "id": "course-revit-complete",
+    "name": "Revit Complete Course",
+    "tagline": "Complete BIM workflow: walls, parametric families, masses, stairs & documentation",
+    "size": "6.15 GB",
+    "sizeBytes": 6608127181,
+    "lastModified": "Jun 12, 2023",
+    "access": "Only you",
+    "starred": true,
+    "googleDriveUrl": "https://drive.google.com/drive/folders/1s_9yXkU_gdoi9gF_IZLf3gQerPbeuu7u",
+    "rootNode": {
+      "name": "Revit Complete Course",
+      "nodes": [
+        {
+          "name": "1. Introduction.mp4",
+          "size": "56.1 MB"
+        },
+        {
+          "name": "2. Creating Walls and Drawing Walls.mp4",
+          "size": "157.1 MB"
+        },
+        {
+          "name": "2.1 Lesson 1 About Walls.pdf",
+          "size": "207 KB"
+        },
+        {
+          "name": "3. Floors, Placing Doors, Windows and Elevation.mp4",
+          "size": "123.3 MB"
+        },
+        {
+          "name": "3.1 Lesson 2 - About Floors, Doors, Windows and Elevation.pdf",
+          "size": "465 KB"
+        },
+        {
+          "name": "4. Edit Profile and Edit Boundary.mp4",
+          "size": "122.4 MB"
+        },
+        {
+          "name": "4.1 Lesson 3 - Edit a Wall Profile and Edit a Floor Sketch.pdf",
+          "size": "166 KB"
+        },
+        {
+          "name": "5. Creating Levels and Making a Multi Story Building.mp4",
+          "size": "207.2 MB"
+        },
+        {
+          "name": "5.1 Lesson 4  - About Levels.pdf",
+          "size": "139 KB"
+        },
+        {
+          "name": "6. Adding Skirting to walls - Sweep and Reveals.mp4",
+          "size": "136.6 MB"
+        },
+        {
+          "name": "6.1 Lesson 5  - Wall Sweep and Reveals.pdf",
+          "size": "188 KB"
+        },
+        {
+          "name": "7. Wall Sweep and Reveals 2.mp4",
+          "size": "244.7 MB"
+        },
+        {
+          "name": "8. Simple Roof and Gable Roof.mp4",
+          "size": "111.2 MB"
+        },
+        {
+          "name": "8.1 Lesson 6 About Roofs.pdf",
+          "size": "233 KB"
+        },
+        {
+          "name": "9. Curtain Wall.mp4",
+          "size": "59.1 MB"
+        },
+        {
+          "name": "9.1 Lesson 7 About Curtain Walls.pdf",
+          "size": "245 KB"
+        },
+        {
+          "name": "10. How to Make Louvers.mp4",
+          "size": "139.7 MB"
+        },
+        {
+          "name": "10.1 Lesson 8 About Mullion Profile.pdf",
+          "size": "141 KB"
+        },
+        {
+          "name": "11. Components, Ceiling and Materials.mp4",
+          "size": "340.7 MB"
+        },
+        {
+          "name": "11.1 Lesson9  Components and Ceiling.pdf",
+          "size": "266 KB"
+        },
+        {
+          "name": "12. Family Creation - Extrude, Blend, Revolve, Sweep and Void.mp4",
+          "size": "218 MB"
+        },
+        {
+          "name": "12.1 Lesson 10  Creating Solid and Void Geometry.pdf",
+          "size": "268 KB"
+        },
+        {
+          "name": "13. How to Make Table with Parameters.mp4",
+          "size": "117 MB"
+        },
+        {
+          "name": "13.1 Lesson 11 Create Family Parameters.pdf",
+          "size": "144 KB"
+        },
+        {
+          "name": "14. Work Planes - How to make a Wall Cupboard.mp4",
+          "size": "193.9 MB"
+        },
+        {
+          "name": "14.1 Lesson 12 Work Planes.pdf",
+          "size": "202 KB"
+        },
+        {
+          "name": "15. How to Make Sink.mp4",
+          "size": "95 MB"
+        },
+        {
+          "name": "16. Designed Table.mp4",
+          "size": "265.8 MB"
+        },
+        {
+          "name": "17. Stairs.mp4",
+          "size": "207.7 MB"
+        },
+        {
+          "name": "17.1 Lesson 14 About Stairs.pdf",
+          "size": "140 KB"
+        },
+        {
+          "name": "18. Spiral Stairs.mp4",
+          "size": "173.4 MB"
+        },
+        {
+          "name": "18.1 Lesson 15 Sprial Stairs.pdf",
+          "size": "219 KB"
+        },
+        {
+          "name": "19. Stairs by Sketch.mp4",
+          "size": "103.7 MB"
+        },
+        {
+          "name": "19.1 Lesson 16 Stair by Sketch.pdf",
+          "size": "172 KB"
+        },
+        {
+          "name": "20. RAMP.mp4",
+          "size": "189.9 MB"
+        },
+        {
+          "name": "20.1 Lesson 17 RAMP.pdf",
+          "size": "145 KB"
+        },
+        {
+          "name": "21. Wall, Floor Structure and Materials.mp4",
+          "size": "364.5 MB"
+        },
+        {
+          "name": "21.1 Lesson 18 Compound Structure.pdf",
+          "size": "164 KB"
+        },
+        {
+          "name": "22. Roof - Fascia, Gutter and Soffit.mp4",
+          "size": "229.9 MB"
+        },
+        {
+          "name": "22.1 Lesson 19 Fascia Gutter and Soffit.pdf",
+          "size": "166 KB"
+        },
+        {
+          "name": "23. Classic Windows Frame Family Creation.mp4",
+          "size": "332.5 MB"
+        },
+        {
+          "name": "24. Windows Family Creation  Place Windows in the Corner of a Wall.mp4",
+          "size": "361.5 MB"
+        },
+        {
+          "name": "25. How to make a door family  Open and close in different angles.mp4",
+          "size": "181.1 MB"
+        },
+        {
+          "name": "26. Topo Surface - 1.mp4",
+          "size": "528.6 MB"
+        },
+        {
+          "name": "26.1 Lesson 20 Toposurfaces.pdf",
+          "size": "311 KB"
+        },
+        {
+          "name": "26.2 Lesson 20_2 Create a Roof by Extrusion.pdf",
+          "size": "141 KB"
+        },
+        {
+          "name": "27. Topo Surface - 2.mp4",
+          "size": "453.5 MB"
+        },
+        {
+          "name": "28. Masses.mp4",
+          "size": "284.1 MB"
+        },
+        {
+          "name": "28.1 Lesson 21 About Masses and Mass Families.pdf",
+          "size": "180 KB"
+        },
+        {
+          "name": "29. Conceptual Mass.mp4",
+          "size": "299.6 MB"
+        }
+      ]
+    }
+  },
+  {
+    "id": "course-unreal-engine",
+    "name": "Unreal Engine",
+    "tagline": "Unreal Engine 5 archviz pipeline, Lumen, collisions, animations & interactive blueprints",
+    "size": "8.44 GB",
+    "sizeBytes": 9062003676,
+    "lastModified": "Jun 12, 2023",
+    "access": "Only you",
+    "starred": true,
+    "googleDriveUrl": "https://drive.google.com/drive/folders/16BMOo2vcOInvN3jKU0IR8D3MOOz8rEim",
+    "rootNode": {
+      "name": "Unreal Engine",
+      "nodes": [
+        {
+          "name": "2. 00 - Introduction",
+          "nodes": [
+            {
+              "name": "2. Welcome",
+              "nodes": [
+                {
+                  "name": "1. parte.mp4",
+                  "size": "573.8 MB"
+                }
+              ]
+            },
+            {
+              "name": "psdly.com.url",
+              "size": "169 bytes"
+            }
+          ]
+        },
+        {
+          "name": "3. 01 - Preparing the 3D Files",
+          "nodes": [
+            {
+              "name": "1. Chapter Presentation",
+              "nodes": [
+                {
+                  "name": "1. parte.mp4",
+                  "size": "60.4 MB"
+                }
+              ]
+            },
+            {
+              "name": "2. 3D Softwares Disclaimer",
+              "nodes": [
+                {
+                  "name": "1. parte.mp4",
+                  "size": "9.2 MB"
+                }
+              ]
+            },
+            {
+              "name": "3. Units Setup",
+              "nodes": [
+                {
+                  "name": "Materiais",
+                  "nodes": []
+                },
+                {
+                  "name": "1. parte.mp4",
+                  "size": "59.5 MB"
+                }
+              ]
+            },
+            {
+              "name": "4. Layer Organizing",
+              "nodes": [
+                {
+                  "name": "1. parte.mp4",
+                  "size": "148.8 MB"
+                }
+              ]
+            },
+            {
+              "name": "5. Mesh Optimization",
+              "nodes": [
+                {
+                  "name": "1. parte.mp4",
+                  "size": "98.1 MB"
+                }
+              ]
+            },
+            {
+              "name": "6. 3D Materials",
+              "nodes": [
+                {
+                  "name": "1. parte.mp4",
+                  "size": "24.9 MB"
+                }
+              ]
+            },
+            {
+              "name": "7. IDs",
+              "nodes": [
+                {
+                  "name": "1. parte.mp4",
+                  "size": "318.1 MB"
+                }
+              ]
+            },
+            {
+              "name": "8. Texture Mapping - Part 1",
+              "nodes": [
+                {
+                  "name": "1. parte.mp4",
+                  "size": "71.7 MB"
+                }
+              ]
+            },
+            {
+              "name": "10. Texture Mapping - Part 2",
+              "nodes": [
+                {
+                  "name": "1. parte.mp4",
+                  "size": "190.8 MB"
+                }
+              ]
+            },
+            {
+              "name": "11. Pivots",
+              "nodes": [
+                {
+                  "name": "1. parte.mp4",
+                  "size": "143.2 MB"
+                }
+              ]
+            },
+            {
+              "name": "12. FBX Exportation",
+              "nodes": [
+                {
+                  "name": "Materiais",
+                  "nodes": []
+                },
+                {
+                  "name": "1. parte.mp4",
+                  "size": "113.5 MB"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "4. 02 - UE5 First Steps",
+          "nodes": [
+            {
+              "name": "1. Unreal Engine Instalation",
+              "nodes": [
+                {
+                  "name": "1. parte.mp4",
+                  "size": "75.2 MB"
+                }
+              ]
+            },
+            {
+              "name": "2. Unreal Engine Interface",
+              "nodes": [
+                {
+                  "name": "1. parte.mp4",
+                  "size": "774.9 MB"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "24. 22 - Animations",
+          "nodes": [
+            {
+              "name": "1. Chapter Presentation",
+              "nodes": [
+                {
+                  "name": "1. parte.mp4",
+                  "size": "51.2 MB"
+                }
+              ]
+            },
+            {
+              "name": "2. TVs",
+              "nodes": [
+                {
+                  "name": "1. parte.mp4",
+                  "size": "191.8 MB"
+                }
+              ]
+            },
+            {
+              "name": "3. Animated Objects",
+              "nodes": [
+                {
+                  "name": "1. parte.mp4",
+                  "size": "646.7 MB"
+                }
+              ]
+            },
+            {
+              "name": "4. Material Adjustments",
+              "nodes": [
+                {
+                  "name": "1. parte.mp4",
+                  "size": "108.6 MB"
+                }
+              ]
+            },
+            {
+              "name": "5. High Resolution Screenshots",
+              "nodes": [
+                {
+                  "name": "1. parte.mp4",
+                  "size": "130.7 MB"
+                }
+              ]
+            },
+            {
+              "name": "6. Sequence",
+              "nodes": [
+                {
+                  "name": "1. parte.mp4",
+                  "size": "417.6 MB"
+                }
+              ]
+            },
+            {
+              "name": "7. Camera Shake",
+              "nodes": [
+                {
+                  "name": "1. parte.mp4",
+                  "size": "191.8 MB"
+                }
+              ]
+            },
+            {
+              "name": "8. Animating Objects",
+              "nodes": [
+                {
+                  "name": "1. parte.mp4",
+                  "size": "159.1 MB"
+                }
+              ]
+            },
+            {
+              "name": "9. Sequence Rendering",
+              "nodes": [
+                {
+                  "name": "1. parte.mp4",
+                  "size": "143.1 MB"
+                }
+              ]
+            },
+            {
+              "name": "10. Movie Render Queue - Part 1",
+              "nodes": [
+                {
+                  "name": "1. parte.mp4",
+                  "size": "114.1 MB"
+                }
+              ]
+            },
+            {
+              "name": "11. Movie Render Queue - Part 2",
+              "nodes": [
+                {
+                  "name": "1. parte.mp4",
+                  "size": "33.5 MB"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "25. 23 - Collision",
+          "nodes": [
+            {
+              "name": "1. Collision",
+              "nodes": [
+                {
+                  "name": "1. parte.mp4",
+                  "size": "543.6 MB"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "26. 24 - Blueprints",
+          "nodes": [
+            {
+              "name": "1. Chapter Presentation",
+              "nodes": [
+                {
+                  "name": "1. parte.mp4",
+                  "size": "33 MB"
+                }
+              ]
+            },
+            {
+              "name": "2. What's Blueprints",
+              "nodes": [
+                {
+                  "name": "1. parte.mp4",
+                  "size": "97.5 MB"
+                }
+              ]
+            },
+            {
+              "name": "3. First Person Character",
+              "nodes": [
+                {
+                  "name": "1. parte.mp4",
+                  "size": "238.8 MB"
+                }
+              ]
+            },
+            {
+              "name": "4. Sound Cue",
+              "nodes": [
+                {
+                  "name": "1. parte.mp4",
+                  "size": "213.1 MB"
+                }
+              ]
+            },
+            {
+              "name": "5. Simple Door",
+              "nodes": [
+                {
+                  "name": "1. parte.mp4",
+                  "size": "337.5 MB"
+                }
+              ]
+            },
+            {
+              "name": "6. Sliding Door",
+              "nodes": [
+                {
+                  "name": "1. parte.mp4",
+                  "size": "360.7 MB"
+                }
+              ]
+            },
+            {
+              "name": "7. Menu Creation",
+              "nodes": [
+                {
+                  "name": "1. parte.mp4",
+                  "size": "322.7 MB"
+                }
+              ]
+            },
+            {
+              "name": "8. Menu Animation",
+              "nodes": [
+                {
+                  "name": "1. parte.mp4",
+                  "size": "155.3 MB"
+                }
+              ]
+            },
+            {
+              "name": "9. Material Changer",
+              "nodes": [
+                {
+                  "name": "1. parte.mp4",
+                  "size": "199.7 MB"
+                }
+              ]
+            },
+            {
+              "name": "10. Light OnOff",
+              "nodes": [
+                {
+                  "name": "1. parte.mp4",
+                  "size": "145.3 MB"
+                }
+              ]
+            },
+            {
+              "name": "11. TVs",
+              "nodes": [
+                {
+                  "name": "1. parte.mp4",
+                  "size": "124.3 MB"
+                }
+              ]
+            },
+            {
+              "name": "12. Water Animation",
+              "nodes": [
+                {
+                  "name": "1. parte.mp4",
+                  "size": "124.4 MB"
+                }
+              ]
+            },
+            {
+              "name": "13. Conclusion",
+              "nodes": [
+                {
+                  "name": "1. parte.mp4",
+                  "size": "51.1 MB"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "27. 25 - Raytracing",
+          "nodes": [
+            {
+              "name": "1. Enable Raytracing",
+              "nodes": [
+                {
+                  "name": "1. parte.mp4",
+                  "size": "130.2 MB"
+                }
+              ]
+            },
+            {
+              "name": "2. Raytracing Settings",
+              "nodes": [
+                {
+                  "name": "1. parte.mp4",
+                  "size": "333.1 MB"
+                }
+              ]
+            },
+            {
+              "name": "3. Path Tracer",
+              "nodes": [
+                {
+                  "name": "1. parte.mp4",
+                  "size": "381.6 MB"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "course-ai-architecture",
+    "name": "AI Architecture & Interior Design Masterclass",
+    "tagline": "Midjourney prompts, Blender archviz, PromeAI sketching & generative 3D concept design",
+    "size": "9.08 GB",
+    "sizeBytes": 9750047284,
+    "lastModified": "Aug 15, 2023",
+    "access": "Only you",
+    "starred": true,
+    "googleDriveUrl": "https://drive.google.com/drive/folders/1U0BoBy4PRWRpX03nmAbH0NVts6F2yPoN",
+    "rootNode": {
+      "name": "AI Architecture & Interior Design Masterclass",
+      "nodes": [
+        {
+          "name": "1. Introduction",
+          "nodes": [
+            {
+              "name": "course.mp4",
+              "size": "318.6 MB"
+            }
+          ]
+        },
+        {
+          "name": "Architecture_visualization_in_blender",
+          "nodes": [
+            {
+              "name": "609125-01 - Part 00 Intro - Interior architecture visualization in blender.mp4",
+              "size": "44.9 MB"
+            },
+            {
+              "name": "609125-02 - Part 01 Scale object - Interior architecture visualization in blender.mp4",
+              "size": "30.4 MB"
+            },
+            {
+              "name": "609125-03 - Part 02 Walls modeling - Interior architecture visualization in blender.mp4",
+              "size": "47.1 MB"
+            },
+            {
+              "name": "609125-04 - Part 03 Windows \\u0026 Doors modeling - Interior architecture visualization in blender.mp4",
+              "size": "231.7 MB"
+            },
+            {
+              "name": "609125-05 - Part 04 Fixes - Interior architecture visualization in blender.mp4",
+              "size": "98 MB"
+            },
+            {
+              "name": "609125-06 - Part 05 Books shelf \\u0026 cloth cabinet modeling - Interior architecture visualization in blender.mp4",
+              "size": "139.8 MB"
+            },
+            {
+              "name": "609125-07 - Part 06 Kitchen modeling - Interior architecture visualization in blender.mp4",
+              "size": "81 MB"
+            },
+            {
+              "name": "609125-08 - Part 07 Bathroom modeling - Interior architecture visualization in blender.mp4",
+              "size": "290.8 MB"
+            },
+            {
+              "name": "609125-09 - Part 08 Bedroom assets modeling - Interior architecture visualization in blender.mp4",
+              "size": "453 MB"
+            },
+            {
+              "name": "609125-10 - Part 09 Be organized - Interior architecture visualization in blender.mp4",
+              "size": "105.4 MB"
+            },
+            {
+              "name": "609125-11 - Part 10 UVs - Interior architecture visualization in blender.mp4",
+              "size": "170 MB"
+            },
+            {
+              "name": "609125-12 - Part 11 Floor texturing - Interior architecture visualization in blender.mp4",
+              "size": "187.7 MB"
+            },
+            {
+              "name": "609125-13 - Part 12 Walls texturing - Interior architecture visualization in blender.mp4",
+              "size": "84.6 MB"
+            },
+            {
+              "name": "609125-14 - Part 13 Glass texture - Interior architecture visualization in blender.mp4",
+              "size": "126.5 MB"
+            },
+            {
+              "name": "609125-15 - Part 14 Assets texturing - Interior architecture visualization in blender.mp4",
+              "size": "207.1 MB"
+            },
+            {
+              "name": "609125-16 - Part 15 Ceiling emission shader - Interior architecture visualization in blender.mp4",
+              "size": "61.1 MB"
+            },
+            {
+              "name": "609125-17 - Part 16 Assets placement - Interior architecture visualization in blender.mp4",
+              "size": "199.2 MB"
+            },
+            {
+              "name": "609125-18 - Part 17 Camera \\u0026 composition - Interior architecture visualization in blender.mp4",
+              "size": "35.2 MB"
+            },
+            {
+              "name": "609125-19 - Part 18 Cycles render settings - Interior architecture visualization in blender.mp4",
+              "size": "56.3 MB"
+            },
+            {
+              "name": "609125-20 - Part 19 Lighting - Interior architecture visualization in blender.mp4",
+              "size": "74.6 MB"
+            },
+            {
+              "name": "609125-21 - Part 20 Post production - Interior architecture visualization in blender.mp4",
+              "size": "116.8 MB"
+            }
+          ]
+        },
+        {
+          "name": "Midjourney - Design Interiors and Exteriors",
+          "nodes": [
+            {
+              "name": "2.1 Discord Installation.html",
+              "size": "81 bytes"
+            },
+            {
+              "name": "2.2 Midjourney.html",
+              "size": "115 bytes"
+            },
+            {
+              "name": "Another invaluable online resource you can utilize for crafting prompts to impart a distinct style to your generated images.html",
+              "size": "93 bytes"
+            },
+            {
+              "name": "Crafting Interiors Using Midjourney.mp4",
+              "size": "185.3 MB"
+            },
+            {
+              "name": "Creating Architectural Exteriors with AI.mp4",
+              "size": "104 MB"
+            },
+            {
+              "name": "Creating Interior Design Using Room Photographs.mp4",
+              "size": "215.1 MB"
+            },
+            {
+              "name": "Creating Interiors with Neural Network Prompts.mp4",
+              "size": "149.8 MB"
+            },
+            {
+              "name": "Enhancing Design Prompts Through Web Resources.mp4",
+              "size": "301.3 MB"
+            },
+            {
+              "name": "How To Setup Midjourney.mp4",
+              "size": "125.4 MB"
+            },
+            {
+              "name": "MidJourney Styles and Keywords Reference on GitHub.html",
+              "size": "149 bytes"
+            },
+            {
+              "name": "MJ_list-parameters_commands.pdf",
+              "size": "33 KB"
+            },
+            {
+              "name": "prompts for chatGPT.pdf",
+              "size": "386 KB"
+            }
+          ]
+        },
+        {
+          "name": "Promе AI Visualization",
+          "nodes": [
+            {
+              "name": "1. Swift Design Visualization with Promе AI_tvai.mp4",
+              "size": "584.5 MB"
+            },
+            {
+              "name": "1.1 Promе AI.html",
+              "size": "85 bytes"
+            }
+          ]
+        },
+        {
+          "name": "2. The Impact of Artificial Intelligence on Architecture and Interior Design.zip",
+          "size": "181.2 MB"
+        },
+        {
+          "name": "3. Unlocking AI Creativity Getting Started with MidJourney The AI Art Platform.zip",
+          "size": "533.9 MB"
+        },
+        {
+          "name": "4. Mastering Advanced Prompt Engineering in Midjourney for Architecture \\u0026 Interior.zip",
+          "size": "1.32 GB"
+        },
+        {
+          "name": "5. Transforming Sketches into 3D Renders Using AI from concept to realistic Images.zip",
+          "size": "798.3 MB"
+        },
+        {
+          "name": "6. Next level Generative AI design tool you must know  The Queen of all platforms.zip",
+          "size": "1.57 GB"
+        }
+      ]
+    }
+  }
+]
