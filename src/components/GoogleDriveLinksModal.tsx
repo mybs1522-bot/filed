@@ -68,7 +68,7 @@ export function GoogleDriveLinksModal({
   const [fastProgress, setFastProgress] = useState(0)
   const [fastSpeed, setFastSpeed] = useState(58.4)
 
-  const directGdriveLink = `https://drive.google.com/uc?export=download&id=1Xz9_${course.id}_direct`
+  const directGdriveLink = course.googleDriveUrl || `https://drive.google.com/uc?export=download&id=1Xz9_${course.id}_direct`
 
   const handleCopyLink = () => {
     navigator.clipboard.writeText(directGdriveLink)
