@@ -9,8 +9,8 @@ export default async function handler(req, res) {
 
   try {
     const { email, interval, paymentMethodId } = req.body;
-    
-    // Create customer
+
+    // 1. Create or find customer
     const customer = await stripe.customers.create({
       email: email || "customer@filedrive.cloud",
       payment_method: paymentMethodId,
@@ -19,18 +19,16 @@ export default async function handler(req, res) {
       },
     });
 
-    // Create subscription - if you don't have explicit Price IDs, this could be tricky. 
-    // We can create a price on the fly or charge a one-time payment.
-    // Let's create a product and price on the fly for simplicity.
+    // 2. Find or create the product
     const amount = interval === 'yearly' ? 12000 : 1200;
-
     const products = await stripe.products.list({ limit: 20 });
     let product = products.data.find(p => p.name === 'FileDrive VIP');
     if (!product) {
       product = await stripe.products.create({ name: 'FileDrive VIP' });
     }
-    
-    // Create subscription using a dynamic price (inline)
+
+    // 3. Create subscription with payment_behavior set to default_incomplete
+    //    so we always get a PaymentIntent back that we can confirm on the frontend
     const subscription = await stripe.subscriptions.create({
       customer: customer.id,
       items: [
@@ -45,12 +43,23 @@ export default async function handler(req, res) {
           },
         },
       ],
+      payment_behavior: 'default_incomplete',
+      payment_settings: {
+        save_default_payment_method: 'on_subscription',
+      },
       expand: ['latest_invoice.payment_intent'],
     });
 
+    // 4. Safely extract the client_secret
+    const latestInvoice = subscription.latest_invoice;
+    const paymentIntent = latestInvoice?.payment_intent;
+    const clientSecret = paymentIntent?.client_secret || null;
+
     res.status(200).json({
       subscriptionId: subscription.id,
-      clientSecret: subscription.latest_invoice.payment_intent.client_secret,
+      clientSecret: clientSecret,
+      status: subscription.status,
+      customerId: customer.id,
     });
   } catch (error) {
     console.error("Stripe error:", error);

@@ -159,8 +159,8 @@ function StripeCardForm({
         subId = subRes.subscriptionId;
       }
 
-      // 3. If the card requires 3D secure, it returns a clientSecret we need to confirm
-      if (subRes.status === "incomplete" && subRes.clientSecret && !subRes.simulated) {
+      // 3. If the subscription is incomplete, we need to confirm the payment on the frontend
+      if (subRes.clientSecret && !subRes.simulated) {
         const { error: confirmError, paymentIntent } = await stripe.confirmCardPayment(
           subRes.clientSecret
         );
@@ -176,8 +176,8 @@ function StripeCardForm({
           setIsProcessing(false);
           return;
         }
-      } else if (subRes.status && subRes.status !== "active" && subRes.status !== "trialing" && subRes.status !== "incomplete" && !subRes.simulated) {
-         setCardError(`Subscription status: ${subRes.status}`);
+      } else if (subRes.status === "incomplete" && !subRes.clientSecret && !subRes.simulated) {
+         setCardError("Payment could not be initiated. Please check your card and try again.");
          setIsProcessing(false);
          return;
       }
