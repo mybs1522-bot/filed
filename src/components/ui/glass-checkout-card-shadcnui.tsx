@@ -265,10 +265,7 @@ function StripeCardForm({
           <span>Processing Payment...</span>
         ) : (
           <>
-            <span>
-              Subscribe ${amount.toFixed(2)}
-              {billingCycle === "yearly" ? "/year" : "/month"} with Card
-            </span>
+            <span>Subscribe Premium</span>
             <ArrowRight className="w-4 h-4 ml-0.5" />
           </>
         )}
@@ -527,10 +524,7 @@ export function GlassCheckoutCard({
                       <span>Connecting to PayPal...</span>
                     ) : (
                       <>
-                        <span>
-                          Subscribe ${amount.toFixed(2)}
-                          {billingCycle === "yearly" ? "/year" : "/month"} with PayPal
-                        </span>
+                        <span>Subscribe Premium</span>
                         <ArrowRight className="w-4 h-4 ml-0.5" />
                       </>
                     )}
