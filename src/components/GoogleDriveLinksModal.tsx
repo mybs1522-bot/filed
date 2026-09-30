@@ -22,6 +22,7 @@ interface GoogleDriveLinksModalProps {
   billingCycle?: "monthly" | "yearly"
   onClose: () => void
   onPaymentSuccess?: () => void
+  userEmail?: string
 }
 
 export function GoogleDriveLinksModal({
@@ -30,6 +31,7 @@ export function GoogleDriveLinksModal({
   billingCycle = "monthly",
   onClose,
   onPaymentSuccess,
+  userEmail,
 }: GoogleDriveLinksModalProps) {
   if (!isOpen || !course) return null
 
@@ -106,6 +108,7 @@ export function GoogleDriveLinksModal({
               billingCycle={billingCycle}
               className="w-full"
               onPaymentSuccess={handleSimulatePayment}
+              userEmail={userEmail}
             />
           ) : (
             /* Unlocked State with Direct Link & Fast Download */

@@ -443,6 +443,7 @@ export function App() {
         course={googleDriveCourse}
         isOpen={!!googleDriveCourse}
         billingCycle={billingCycle}
+        userEmail={currentUser?.email}
         onPaymentSuccess={() => {
           setSlowDownloadSession(null)
         }}

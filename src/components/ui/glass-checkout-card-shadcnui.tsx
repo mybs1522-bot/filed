@@ -284,6 +284,7 @@ export interface GlassCheckoutCardProps {
   billingCycle?: "monthly" | "yearly";
   className?: string;
   onPaymentSuccess?: () => void;
+  userEmail?: string;
 }
 
 export function GlassCheckoutCard({
@@ -291,10 +292,11 @@ export function GlassCheckoutCard({
   billingCycle = "monthly",
   className,
   onPaymentSuccess,
+  userEmail,
 }: GlassCheckoutCardProps) {
   const [paymentMethod, setPaymentMethod] = useState<"card" | "paypal">("card");
-  const [email, setEmail] = useState("");
-  const [paypalEmail, setPaypalEmail] = useState("");
+  const [email, setEmail] = useState(userEmail || "");
+  const [paypalEmail, setPaypalEmail] = useState(userEmail || "");
   const [isProcessing, setIsProcessing] = useState(false);
   const [isPaid, setIsPaid] = useState(false);
   const [cardError, setCardError] = useState<string | null>(null);
