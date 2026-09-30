@@ -15,6 +15,70 @@ export interface Course {
 
 export const COURSES: Course[] = [
   {
+    "id": "course-3d-models-textures",
+    "name": "3D Models & Textures",
+    "tagline": "SAMPLE TEXTURES AND MODELS",
+    "size": "5.4 GB",
+    "sizeBytes": 5798205849,
+    "lastModified": "Jul 30, 2024",
+    "access": "Only you",
+    "starred": false,
+    "googleDriveUrl": "https://drive.google.com/drive/folders/1n8fSTVtySXMHbPd1nhlqA6yIijNqrqUK?usp=drive_link",
+    "rootNode": {
+      "name": "3D Models & Textures",
+      "nodes": [
+        {
+          "name": "APART COMPLETE",
+          "nodes": [
+            { "name": "Assets", "nodes": [] },
+            { "name": "Maps", "nodes": [] },
+            { "name": "Project_Files.zip", "size": "1.2 GB" }
+          ]
+        },
+        {
+          "name": "BATHROOM SAMPLES",
+          "nodes": [
+            { "name": "Assets", "nodes": [] },
+            { "name": "Maps", "nodes": [] },
+            { "name": "Project_Files.zip", "size": "800 MB" }
+          ]
+        },
+        {
+          "name": "BEDROOM SAMPLES",
+          "nodes": [
+            { "name": "Assets", "nodes": [] },
+            { "name": "Maps", "nodes": [] },
+            { "name": "Project_Files.zip", "size": "950 MB" }
+          ]
+        },
+        {
+          "name": "EXTERIOR SAMPLES",
+          "nodes": [
+            { "name": "Assets", "nodes": [] },
+            { "name": "Maps", "nodes": [] },
+            { "name": "Project_Files.zip", "size": "1.5 GB" }
+          ]
+        },
+        {
+          "name": "KITCHEN SAMPLES",
+          "nodes": [
+            { "name": "Assets", "nodes": [] },
+            { "name": "Maps", "nodes": [] },
+            { "name": "Project_Files.zip", "size": "1.1 GB" }
+          ]
+        },
+        {
+          "name": "WASHROOM SAMPLES",
+          "nodes": [
+            { "name": "Assets", "nodes": [] },
+            { "name": "Maps", "nodes": [] },
+            { "name": "Project_Files.zip", "size": "700 MB" }
+          ]
+        }
+      ]
+    }
+  },
+  {
     "id": "course-3ds-max-vray",
     "name": "3ds-Max + Vray Complete Course",
     "tagline": "Complete architectural 3D modeling, V-Ray materials, lighting & rendering pipeline",
