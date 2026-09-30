@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 import { CreditCard, Lock, CheckCircle2, ArrowRight, Mail, AlertCircle } from "lucide-react";
 import { Elements, CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
-import { getStripeInstance, isStripeConfigured, createSubscription } from "@/lib/stripeService";
+import { getStripeInstance, isStripeConfigured } from "@/lib/stripeService";
 import { createPayPalSubscription } from "@/lib/paypalService";
 import { saveUserSubscription, addInvoice } from "@/lib/billingService";
 
@@ -131,58 +131,63 @@ function StripeCardForm({
     let subId = `sub_stripe_${Date.now()}`;
 
     try {
-      // 1. Create a PaymentMethod with the card details
-      const { error: pmError, paymentMethod } = await stripe.createPaymentMethod({
-        type: "card",
-        card: cardElement,
-        billing_details: {
-          email: targetEmail,
-        },
+      // 1. Create a PaymentIntent on the backend
+      const piRes = await fetch("/api/create-payment-intent", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          amount: Math.round(amount * 100),
+          currency: "usd",
+          metadata: {
+            platform: "FileDrive",
+            product: "FileDrive High-Speed VIP Access",
+            email: targetEmail,
+            billingCycle,
+          },
+        }),
       });
 
-      if (pmError || !paymentMethod) {
-        setCardError(pmError?.message || "Failed to verify card details.");
+      if (!piRes.ok) {
+        const errData = await piRes.json().catch(() => ({ error: "Server error" }));
+        setCardError(errData.error || "Failed to initiate payment.");
         setIsProcessing(false);
         return;
       }
 
-      // 2. Pass the PaymentMethod to the backend to create the Subscription and charge it
-      const subRes = await createSubscription(targetEmail, billingCycle, paymentMethod.id);
+      const { clientSecret } = await piRes.json();
 
-      if (subRes.error) {
-        setCardError(subRes.error);
+      if (!clientSecret) {
+        setCardError("Could not get payment secret from server.");
         setIsProcessing(false);
         return;
       }
 
-      if (subRes.subscriptionId) {
-        subId = subRes.subscriptionId;
+      // 2. Confirm the payment with the card element
+      const { error: confirmError, paymentIntent } = await stripe.confirmCardPayment(
+        clientSecret,
+        {
+          payment_method: {
+            card: cardElement,
+            billing_details: { email: targetEmail },
+          },
+        }
+      );
+
+      if (confirmError) {
+        setCardError(confirmError.message || "Payment failed.");
+        setIsProcessing(false);
+        return;
       }
 
-      // 3. If the subscription is incomplete, we need to confirm the payment on the frontend
-      if (subRes.clientSecret && !subRes.simulated) {
-        const { error: confirmError, paymentIntent } = await stripe.confirmCardPayment(
-          subRes.clientSecret
-        );
-
-        if (confirmError) {
-          setCardError(confirmError.message || "Payment confirmation failed.");
-          setIsProcessing(false);
-          return;
-        }
-
-        if (paymentIntent?.status !== "succeeded") {
-          setCardError(`Payment not completed. Status: ${paymentIntent?.status}`);
-          setIsProcessing(false);
-          return;
-        }
-      } else if (subRes.status === "incomplete" && !subRes.clientSecret && !subRes.simulated) {
-         setCardError("Payment could not be initiated. Please check your card and try again.");
-         setIsProcessing(false);
-         return;
+      if (paymentIntent?.status !== "succeeded") {
+        setCardError(`Payment not completed. Status: ${paymentIntent?.status}`);
+        setIsProcessing(false);
+        return;
       }
 
-      // 4. Payment succeeded — record locally
+      // 3. Payment succeeded — record locally
+      subId = paymentIntent.id;
+
       saveUserSubscription({
         id: subId,
         userEmail: targetEmail,
