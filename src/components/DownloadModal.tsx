@@ -11,6 +11,7 @@ interface DownloadModalProps {
   onClose: () => void
   onSelectSlow: (course: Course, targetName?: string, targetSize?: string) => void
   onSelectGoogleDrive: (course: Course, cycle?: "monthly" | "yearly") => void
+  isRedirecting?: boolean
 }
 
 export function DownloadModal({
@@ -20,6 +21,7 @@ export function DownloadModal({
   onClose,
   onSelectSlow,
   onSelectGoogleDrive,
+  isRedirecting,
 }: DownloadModalProps) {
   if (!isOpen || !course) return null
 
@@ -57,17 +59,17 @@ export function DownloadModal({
             </button>
           </div>
 
-          {/* Content: Free vs $20 Plan */}
+          {/* Content: Free vs $12 Plan */}
           <div className="p-5 flex justify-center bg-[#111111]">
             <PricingCard
               defaultPlan="gdrive"
+              isRedirecting={isRedirecting}
               onSelectPlan={(planId, cycle) => {
                 if (planId === "free") {
                   onSelectSlow(course, fileTarget?.name, fileTarget?.size)
                   onClose()
                 } else {
                   onSelectGoogleDrive(course, cycle)
-                  onClose()
                 }
               }}
               className="border-0 bg-transparent p-0 shadow-none max-w-full"

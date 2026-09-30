@@ -15,6 +15,7 @@ import { SettingsModal } from "@/components/SettingsModal"
 import { getCoursesList, recordUserLogin, fetchUserSubscription } from "@/lib/supabaseService"
 import { getUserSubscription, saveUserSubscription, addInvoice } from "@/lib/billingService"
 import { ShieldCheck, Database } from "lucide-react"
+import confetti from "canvas-confetti"
 
 export function App() {
   const [courses, setCourses] = useState<Course[]>(COURSES)
@@ -121,92 +122,103 @@ export function App() {
   const [isDocsModalOpen, setIsDocsModalOpen] = useState(false)
   const [isSettingsModalOpen, setIsSettingsModalOpen] = useState(false)
 
-  // Listen for PayPal success return URL and unlock immediately
+  // Listen for Stripe Checkout success return URL and activate plan immediately
   useEffect(() => {
-    if (typeof window !== "undefined" && window.location.search.includes("paypal=success")) {
-      const target = courses[0]
-      if (target) {
-        if (currentUser) {
-           const sub = {
-             id: `paypal-sub-${Date.now()}`,
-             userEmail: currentUser.email,
-             provider: "paypal" as const,
-             planName: "PayPal VIP (Direct CDN)",
-             billingCycle: "monthly" as const,
-             amount: 12.0,
-             currency: "USD",
-             status: "active" as const,
-             startDate: new Date().toISOString(),
-             currentPeriodEnd: new Date(Date.now() + 30 * 86400000).toISOString()
-           };
-           saveUserSubscription(sub);
+    if (typeof window !== "undefined" && window.location.search.includes("stripe=success")) {
+      const urlParams = new URLSearchParams(window.location.search);
+      const cycleParam = (urlParams.get("cycle") as "monthly" | "yearly") || "monthly";
+      const emailParam = urlParams.get("email") || "";
+      const sessionId = urlParams.get("session_id") || `stripe-${Date.now()}`;
 
-           addInvoice({
-             id: `INV-${new Date().getFullYear()}-FD-${Math.floor(Math.random() * 9000 + 1000)}`,
-             subscriptionId: sub.id,
-             userEmail: currentUser.email,
-             date: new Date().toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }),
-             description: "High-Speed VIP Direct Access - Monthly Recurring",
-             amount: 12.0,
-             currency: "USD",
-             provider: "paypal",
-             status: "Paid",
-             period: `${new Date().toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })} - ${new Date(Date.now() + 30 * 86400000).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`,
-             receiptNumber: `REC-${Math.floor(Math.random() * 900000 + 100000)}`,
-             paypalEmail: currentUser.email,
-           });
-        }
-        setGoogleDriveCourse(target)
-        setBillingCycle("monthly")
+      const effectiveEmail = currentUser?.email || emailParam || "subscriber@filedrive.cloud";
+      const amount = cycleParam === "yearly" ? 120.0 : 12.0;
+      const days = cycleParam === "yearly" ? 365 : 30;
+
+      const sub = {
+        id: `stripe-sub-${Date.now()}`,
+        userEmail: effectiveEmail,
+        provider: "stripe" as const,
+        planName: `FileDrive VIP (${cycleParam === "yearly" ? "Annual" : "Monthly"})`,
+        billingCycle: cycleParam,
+        amount: amount,
+        currency: "USD",
+        status: "active" as const,
+        startDate: new Date().toISOString(),
+        currentPeriodEnd: new Date(Date.now() + days * 86400000).toISOString(),
+        cardLast4: "••••",
+      };
+
+      // 1. Instantly save subscription locally & to Supabase
+      saveUserSubscription(sub);
+
+      // 2. Generate and store real invoice receipt
+      addInvoice({
+        id: `INV-${new Date().getFullYear()}-FD-${Math.floor(Math.random() * 9000 + 1000)}`,
+        subscriptionId: sub.id,
+        userEmail: effectiveEmail,
+        date: new Date().toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }),
+        description: `High-Speed VIP Direct Access - ${cycleParam === "yearly" ? "Annual ($120/yr)" : "Monthly ($12/mo)"} Recurring`,
+        amount: amount,
+        currency: "USD",
+        provider: "stripe",
+        status: "Paid",
+        period: `${new Date().toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })} - ${new Date(Date.now() + days * 86400000).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`,
+        receiptNumber: `REC-${Math.floor(Math.random() * 900000 + 100000)}`,
+        cardLast4: "••••",
+      });
+
+      // 3. Auto-login if user wasn't signed in yet
+      if (!currentUser && effectiveEmail && effectiveEmail !== "subscriber@filedrive.cloud") {
+        const autoAccount: UserAccount = {
+          email: effectiveEmail,
+          username: effectiveEmail.split("@")[0],
+          avatar: `https://api.dicebear.com/7.x/identicon/svg?seed=${effectiveEmail}`,
+        };
+        setCurrentUser(autoAccount);
         try {
-          window.history.replaceState({}, document.title, window.location.pathname)
-        } catch {
-          // ignore
+          localStorage.setItem("filedrive_account", JSON.stringify(autoAccount));
+          recordUserLogin(autoAccount.email, autoAccount.username);
+        } catch (e) {
+          console.error(e);
         }
       }
-    }
 
-    // Listen for Stripe Checkout success return
-    if (typeof window !== "undefined" && window.location.search.includes("stripe=success")) {
-      const target = courses[0]
+      // 4. If sessionId is available, verify with backend asynchronously
+      if (sessionId && sessionId.startsWith("cs_")) {
+        fetch(`/api/verify-checkout-session?session_id=${encodeURIComponent(sessionId)}`)
+          .then((res) => res.json())
+          .then((data) => {
+            if (data?.email && data.email !== effectiveEmail) {
+              const updatedSub = { ...sub, userEmail: data.email };
+              saveUserSubscription(updatedSub);
+            }
+          })
+          .catch(console.error);
+      }
+
+      // 5. Open unlocked Google Drive direct links modal immediately
+      const target = courses[0];
       if (target) {
-        if (currentUser) {
-           const sub = {
-             id: `stripe-sub-${Date.now()}`,
-             userEmail: currentUser.email,
-             provider: "stripe" as const,
-             planName: "Stripe VIP (Direct CDN)",
-             billingCycle: "monthly" as const,
-             amount: 12.0,
-             currency: "USD",
-             status: "active" as const,
-             startDate: new Date().toISOString(),
-             currentPeriodEnd: new Date(Date.now() + 30 * 86400000).toISOString()
-           };
-           saveUserSubscription(sub);
+        setGoogleDriveCourse(target);
+      }
+      setBillingCycle(cycleParam);
 
-           addInvoice({
-             id: `INV-${new Date().getFullYear()}-FD-${Math.floor(Math.random() * 9000 + 1000)}`,
-             subscriptionId: sub.id,
-             userEmail: currentUser.email,
-             date: new Date().toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }),
-             description: "High-Speed VIP Direct Access - Monthly Recurring",
-             amount: 12.0,
-             currency: "USD",
-             provider: "stripe",
-             status: "Paid",
-             period: `${new Date().toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })} - ${new Date(Date.now() + 30 * 86400000).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`,
-             receiptNumber: `REC-${Math.floor(Math.random() * 900000 + 100000)}`,
-             cardLast4: "••••",
-           });
-        }
-        setGoogleDriveCourse(target)
-        setBillingCycle("monthly")
-        try {
-          window.history.replaceState({}, document.title, window.location.pathname)
-        } catch {
-          // ignore
-        }
+      // 6. Celebratory confetti
+      try {
+        confetti({
+          particleCount: 120,
+          spread: 80,
+          origin: { y: 0.6 },
+        });
+      } catch {
+        // ignore
+      }
+
+      // 7. Clean query params from URL without refreshing
+      try {
+        window.history.replaceState({}, document.title, window.location.pathname);
+      } catch {
+        // ignore
       }
     }
   }, [courses, currentUser])
@@ -256,8 +268,7 @@ export function App() {
 
     // Resume the download that triggered the signup
     if (pendingDownloadAction) {
-      setDownloadModalCourse(pendingDownloadAction.course)
-      setDownloadModalFileTarget(pendingDownloadAction.fileTarget || null)
+      handleStartStripeCheckout(billingCycle, pendingDownloadAction.course)
       setPendingDownloadAction(null)
     }
   }
@@ -344,6 +355,53 @@ export function App() {
   }
 
   const [billingCycle, setBillingCycle] = useState<"monthly" | "yearly">("monthly")
+  const [isRedirectingToStripe, setIsRedirectingToStripe] = useState(false)
+
+  // Direct checkout taking user directly to Stripe
+  const handleStartStripeCheckout = async (
+    cycle: "monthly" | "yearly" = "monthly",
+    course?: Course
+  ) => {
+    const target = course || downloadModalCourse || courses[0]
+    setBillingCycle(cycle)
+
+    if (!currentUser) {
+      setPendingDownloadAction({ course: target, fileTarget: null })
+      setIsAuthModalOpen(true)
+      return
+    }
+
+    setIsRedirectingToStripe(true)
+    try {
+      const res = await fetch("/api/create-checkout-session", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: currentUser.email,
+          interval: cycle,
+        }),
+      })
+
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({ error: "Failed to create checkout session" }))
+        alert(err.error || "Server error connecting to Stripe")
+        setIsRedirectingToStripe(false)
+        return
+      }
+
+      const data = await res.json()
+      if (data?.url) {
+        window.location.href = data.url
+      } else {
+        alert("Could not load Stripe Checkout URL. Please try again.")
+        setIsRedirectingToStripe(false)
+      }
+    } catch (err) {
+      console.error("Stripe checkout error:", err)
+      alert("Network error connecting to Stripe. Please try again.")
+      setIsRedirectingToStripe(false)
+    }
+  }
 
   // Fast direct upgrade
   const handleOpenGoogleDriveModal = (course?: Course, cycle: "monthly" | "yearly" = "monthly") => {
@@ -388,7 +446,7 @@ export function App() {
     return <AdminPortal onBackToApp={navigateToApp} onCourseAdded={loadCourses} />
   }
 
-  const activeSub = currentUser ? getUserSubscription(currentUser.email) : null
+  const activeSub = getUserSubscription(currentUser?.email)
   const isSubscribed = activeSub?.status === "active"
 
   // 1. Render the full FileDrive page (Open by default; signup opens when user clicks download)
@@ -400,7 +458,10 @@ export function App() {
         activeSection={activeSection}
         onSelectSection={(sec) => setActiveSection(sec)}
         onSelectCourse={(course) => setExplorerCourse(course)}
-        onUpgradeClick={() => handleOpenGoogleDriveModal(courses[0])}
+        onUpgradeClick={() => {
+          setDownloadModalCourse(courses[0])
+          setDownloadModalFileTarget(null)
+        }}
         isOpenMobile={isMobileSidebarOpen}
         onCloseMobile={() => setIsMobileSidebarOpen(false)}
         searchQuery={searchQuery}
@@ -415,7 +476,10 @@ export function App() {
         <DropboxHeader
           searchQuery={searchQuery}
           onSearchChange={setSearchQuery}
-          onUpgradeClick={() => handleOpenGoogleDriveModal(courses[0])}
+          onUpgradeClick={() => {
+            setDownloadModalCourse(courses[0])
+            setDownloadModalFileTarget(null)
+          }}
           onNewFolderClick={handleCreateNewFolder}
           currentUser={currentUser}
           onOpenAuth={() => setIsAuthModalOpen(true)}
@@ -430,7 +494,7 @@ export function App() {
           courses={filteredCourses}
           onOpenExplorer={(course) => setExplorerCourse(course)}
           onInitiateDownload={handleInitiateDownload}
-          onSelectGoogleDrive={(course) => handleOpenGoogleDriveModal(course)}
+          onSelectGoogleDrive={(course) => handleStartStripeCheckout("monthly", course)}
           onNewFolderClick={handleCreateNewFolder}
         />
 
@@ -456,33 +520,34 @@ export function App() {
         </div>
       </div>
 
-      {/* 3. Download Options Modal (Slow Free vs $20 Google Drive) */}
+      {/* 3. Download Options Modal (Slow Free vs High-Speed Stripe Direct) */}
       <DownloadModal
         course={downloadModalCourse}
         fileTarget={downloadModalFileTarget}
         isOpen={!!downloadModalCourse}
+        isRedirecting={isRedirectingToStripe}
         onClose={() => {
           setDownloadModalCourse(null)
           setDownloadModalFileTarget(null)
         }}
         onSelectSlow={handleStartSlowDownload}
         onSelectGoogleDrive={(course, cycle) => {
-          handleOpenGoogleDriveModal(course, cycle || "monthly")
+          handleStartStripeCheckout(cycle || "monthly", course)
         }}
       />
 
-      {/* 4. Slow 4GB Download Simulation Widget (using black & white FileTransferCard with vivid GREEN progress bar) */}
+      {/* 4. Slow 4GB Download Simulation Widget */}
       <SlowDownloadWidget
         session={slowDownloadSession}
         username={currentUser?.username}
         onCancel={() => setSlowDownloadSession(null)}
         onUpgradeToFast={() => {
           const targetCourse = courses.find((c) => c.id === slowDownloadSession?.courseId) || courses[0]
-          handleOpenGoogleDriveModal(targetCourse, "monthly")
+          handleStartStripeCheckout("monthly", targetCourse)
         }}
       />
 
-      {/* 5. Google Drive Direct Links ($20 VIP) Modal */}
+      {/* 5. Google Drive Direct Links (Unlocked State & Fallback) */}
       <GoogleDriveLinksModal
         course={googleDriveCourse}
         isOpen={!!googleDriveCourse}
@@ -514,7 +579,10 @@ export function App() {
         isOpen={isSettingsModalOpen}
         onClose={() => setIsSettingsModalOpen(false)}
         currentUser={currentUser}
-        onUpgradeClick={() => handleOpenGoogleDriveModal(courses[0], "monthly")}
+        onUpgradeClick={() => {
+          setDownloadModalCourse(courses[0])
+          setDownloadModalFileTarget(null)
+        }}
       />
 
       {/* 9. Auth Modal (Opens when clicking download or Sign In without an account) */}

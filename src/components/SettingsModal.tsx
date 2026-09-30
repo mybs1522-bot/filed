@@ -25,7 +25,7 @@ import {
   UserSubscription,
   BillingInvoice,
 } from "@/lib/billingService";
-import { PayPalOfficialLogo } from "@/components/ui/glass-checkout-card-shadcnui";
+
 import { ReceiptModal } from "@/components/ReceiptModal";
 
 interface SettingsModalProps {
@@ -202,17 +202,10 @@ export function SettingsModal({
                         <span>•</span>
 
                         <span className="flex items-center gap-1.5">
-                          {subscription?.provider === "stripe" ? (
-                            <span className="inline-flex items-center gap-1 text-neutral-300">
-                              <CreditCard className="w-3 h-3 text-blue-400" />
-                              Stripe Card (•••• 4242)
-                            </span>
-                          ) : (
-                            <span className="inline-flex items-center gap-1 text-neutral-300">
-                              <PayPalOfficialLogo className="h-3 w-auto" />
-                              PayPal Account
-                            </span>
-                          )}
+                          <span className="inline-flex items-center gap-1 text-neutral-300">
+                            <CreditCard className="w-3 h-3 text-blue-400" />
+                            Stripe Card Billing
+                          </span>
                         </span>
                       </div>
                     </div>
@@ -260,7 +253,7 @@ export function SettingsModal({
                         <AlertTriangle className="w-5 h-5 text-red-400 shrink-0 mt-0.5" />
                         <div className="space-y-1 flex-1">
                           <h5 className="font-bold text-white text-sm">
-                            Cancel {subscription?.provider === "stripe" ? "Stripe" : "PayPal"} Recurring Subscription?
+                            Cancel Stripe Recurring Subscription?
                           </h5>
                           <p className="text-neutral-400 text-xs leading-relaxed">
                             Your high-speed gigabit access will remain active until the end of your billing cycle (
@@ -271,7 +264,7 @@ export function SettingsModal({
                                   year: "numeric",
                                 })
                               : "the current period"}
-                            ). You will not be charged again on {subscription?.provider === "stripe" ? "Stripe" : "PayPal"}.
+                            ). You will not be charged again on Stripe.
                           </p>
                           <div className="flex items-center gap-2 pt-2">
                             <button
@@ -336,7 +329,7 @@ export function SettingsModal({
                                 <span>Period: {inv.period}</span>
                                 <span>•</span>
                                 <span className="uppercase font-mono">
-                                  {inv.provider === "stripe" ? "Stripe (Card)" : "PayPal"}
+                                  Stripe (Card)
                                 </span>
                               </div>
                             </div>

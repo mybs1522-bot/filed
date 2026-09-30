@@ -20,11 +20,15 @@ export default async function handler(req, res) {
       });
     }
 
-    const amount = interval === 'yearly' ? 12000 : 1200; // $120/year or $12/month
+    const cycle = interval === 'yearly' ? 'yearly' : 'monthly';
+    const amount = cycle === 'yearly' ? 12000 : 1200; // $120/year or $12/month
 
-    const session = await stripe.checkout.sessions.create({
+    const origin = req.headers.origin || req.headers.referer?.replace(/\/$/, '') || 'https://filedrive.cloud';
+    const cleanEmail = email ? encodeURIComponent(String(email).trim()) : '';
+
+    const sessionParams = {
       mode: 'subscription',
-      customer_email: email || undefined,
+      payment_method_types: ['card'],
       line_items: [
         {
           price_data: {
@@ -32,25 +36,34 @@ export default async function handler(req, res) {
             product: product.id,
             unit_amount: amount,
             recurring: {
-              interval: interval === 'yearly' ? 'year' : 'month',
+              interval: cycle === 'yearly' ? 'year' : 'month',
             },
           },
           quantity: 1,
         },
       ],
-      success_url: successUrl || `${req.headers.origin || 'http://localhost:5173'}?stripe=success&session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: cancelUrl || `${req.headers.origin || 'http://localhost:5173'}?stripe=cancelled`,
+      success_url: successUrl || `${origin}?stripe=success&cycle=${cycle}&email=${cleanEmail}&session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: cancelUrl || `${origin}?stripe=cancelled`,
       subscription_data: {
+        description: `FileDrive VIP ${cycle === 'yearly' ? 'Annual ($120/yr)' : 'Monthly ($12/mo)'} Subscription`,
         metadata: {
           platform: 'FileDrive',
           product: 'High-Speed VIP Access',
+          cycle: cycle,
+          email: email || '',
         },
       },
-    });
+    };
+
+    if (email && typeof email === 'string' && email.includes('@')) {
+      sessionParams.customer_email = email.trim();
+    }
+
+    const session = await stripe.checkout.sessions.create(sessionParams);
 
     res.status(200).json({ url: session.url, sessionId: session.id });
   } catch (error) {
     console.error("Stripe Checkout error:", error);
     res.status(400).json({ error: error.message });
   }
-};
+}

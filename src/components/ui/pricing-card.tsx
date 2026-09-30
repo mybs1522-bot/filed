@@ -63,6 +63,7 @@ export interface PricingCardProps {
   className?: string;
   showProceedButton?: boolean;
   showHeader?: boolean;
+  isRedirecting?: boolean;
 }
 
 export function PricingCard({
@@ -71,6 +72,7 @@ export function PricingCard({
   className = "",
   showProceedButton = true,
   showHeader = false,
+  isRedirecting = false,
 }: PricingCardProps) {
   const [billingCycle, setBillingCycle] = useState<"monthly" | "yearly">("monthly");
   const [selectedPlan, setSelectedPlan] = useState<"free" | "gdrive">(defaultPlan);
@@ -323,18 +325,28 @@ export function PricingCard({
         <button
           type="button"
           onClick={handleProceed}
-          className={`w-full h-12 px-5 rounded-xl font-bold text-xs md:text-sm transition-all shadow-md flex items-center justify-center gap-2 group active:scale-[0.99] ${
+          disabled={isRedirecting}
+          className={`w-full h-12 px-5 rounded-xl font-bold text-xs md:text-sm transition-all shadow-md flex items-center justify-center gap-2 group active:scale-[0.99] disabled:opacity-75 ${
             selectedPlan === "gdrive"
-              ? "bg-dropbox-blue hover:bg-blue-600 text-white shadow-dropbox-blue/25 hover:shadow-dropbox-blue/40"
+              ? "bg-[#635bff] hover:bg-[#5147e5] text-white shadow-[#635bff]/25 hover:shadow-[#635bff]/40"
               : "bg-neutral-800 hover:bg-neutral-700 text-white border border-neutral-700"
           }`}
         >
-          <span>
-            {selectedPlan === "gdrive"
-              ? `Get High Speed Download (${billingCycle === "yearly" ? "$120 / year" : "$12"})`
-              : "Continue with Slow Download"}
-          </span>
-          <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+          {isRedirecting && selectedPlan === "gdrive" ? (
+            <div className="flex items-center gap-2">
+              <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+              <span>Redirecting to Stripe...</span>
+            </div>
+          ) : (
+            <>
+              <span>
+                {selectedPlan === "gdrive"
+                  ? `Get High Speed Download (${billingCycle === "yearly" ? "$120 / year" : "$12"})`
+                  : "Continue with Slow Download"}
+              </span>
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </>
+          )}
         </button>
       )}
     </div>

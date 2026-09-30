@@ -67,7 +67,7 @@ export function ReceiptModal({ invoice, isOpen, onClose }: ReceiptModalProps) {
               <div className="text-right">
                 <span className="text-[10px] text-neutral-500 uppercase tracking-wider block font-semibold">Payment Details</span>
                 <span className="font-medium text-white block mt-0.5 capitalize">
-                  {invoice.provider === "stripe" ? "Stripe (Card ending 4242)" : `PayPal (${invoice.paypalEmail || invoice.userEmail})`}
+                  Stripe (Card ending 4242)
                 </span>
                 <span className="text-[11px] text-neutral-400 block font-mono">{invoice.date}</span>
               </div>
@@ -112,7 +112,7 @@ export function ReceiptModal({ invoice, isOpen, onClose }: ReceiptModalProps) {
 
             <div className="flex items-center gap-1.5 text-[11px] text-neutral-500 pt-2 border-t border-neutral-800">
               <ShieldCheck className="w-3.5 h-3.5 text-blue-400 shrink-0" />
-              <span>Verified encrypted transaction processed securely via {invoice.provider === "stripe" ? "Stripe" : "PayPal"}.</span>
+              <span>Verified encrypted transaction processed securely via Stripe.</span>
             </div>
           </div>
 
