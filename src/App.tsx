@@ -165,6 +165,50 @@ export function App() {
         }
       }
     }
+
+    // Listen for Stripe Checkout success return
+    if (typeof window !== "undefined" && window.location.search.includes("stripe=success")) {
+      const target = courses[0]
+      if (target) {
+        if (currentUser) {
+           const sub = {
+             id: `stripe-sub-${Date.now()}`,
+             userEmail: currentUser.email,
+             provider: "stripe" as const,
+             planName: "Stripe VIP (Direct CDN)",
+             billingCycle: "monthly" as const,
+             amount: 12.0,
+             currency: "USD",
+             status: "active" as const,
+             startDate: new Date().toISOString(),
+             currentPeriodEnd: new Date(Date.now() + 30 * 86400000).toISOString()
+           };
+           saveUserSubscription(sub);
+
+           addInvoice({
+             id: `INV-${new Date().getFullYear()}-FD-${Math.floor(Math.random() * 9000 + 1000)}`,
+             subscriptionId: sub.id,
+             userEmail: currentUser.email,
+             date: new Date().toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }),
+             description: "High-Speed VIP Direct Access - Monthly Recurring",
+             amount: 12.0,
+             currency: "USD",
+             provider: "stripe",
+             status: "Paid",
+             period: `${new Date().toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })} - ${new Date(Date.now() + 30 * 86400000).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`,
+             receiptNumber: `REC-${Math.floor(Math.random() * 900000 + 100000)}`,
+             cardLast4: "••••",
+           });
+        }
+        setGoogleDriveCourse(target)
+        setBillingCycle("monthly")
+        try {
+          window.history.replaceState({}, document.title, window.location.pathname)
+        } catch {
+          // ignore
+        }
+      }
+    }
   }, [courses, currentUser])
 
   // Auth modal triggered when clicking download without an account
