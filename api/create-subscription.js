@@ -23,6 +23,12 @@ export default async function handler(req, res) {
     // We can create a price on the fly or charge a one-time payment.
     // Let's create a product and price on the fly for simplicity.
     const amount = interval === 'yearly' ? 12000 : 1200;
+
+    const products = await stripe.products.list({ limit: 20 });
+    let product = products.data.find(p => p.name === 'FileDrive VIP');
+    if (!product) {
+      product = await stripe.products.create({ name: 'FileDrive VIP' });
+    }
     
     // Create subscription using a dynamic price (inline)
     const subscription = await stripe.subscriptions.create({
@@ -31,9 +37,7 @@ export default async function handler(req, res) {
         {
           price_data: {
             currency: 'usd',
-            product_data: {
-              name: 'FileDrive High-Speed Direct Access VIP',
-            },
+            product: product.id,
             unit_amount: amount,
             recurring: {
               interval: interval === 'yearly' ? 'year' : 'month',
