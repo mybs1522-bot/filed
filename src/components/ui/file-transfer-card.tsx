@@ -232,7 +232,7 @@ export const FileTransferCard = ({
             className="w-full py-2.5 px-3 rounded-xl bg-[#22c55e] hover:bg-[#16a34a] text-black font-bold text-xs flex items-center justify-center gap-1.5 shadow-lg shadow-emerald-500/20 transition-all active:scale-[0.99] cursor-pointer"
           >
             <Zap className="w-3.5 h-3.5 fill-black" />
-            <span>Speed Up with High Speed Download ($20)</span>
+            <span>Speed Up with High Speed Download</span>
           </button>
         )}
 
