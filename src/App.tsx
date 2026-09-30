@@ -13,7 +13,7 @@ import { AuthScreen, UserAccount } from "@/components/AuthScreen"
 import { AdminPortal } from "@/components/AdminPortal"
 import { SettingsModal } from "@/components/SettingsModal"
 import { getCoursesList, recordUserLogin, fetchUserSubscription } from "@/lib/supabaseService"
-import { getUserSubscription, saveUserSubscription } from "@/lib/billingService"
+import { getUserSubscription, saveUserSubscription, addInvoice } from "@/lib/billingService"
 import { ShieldCheck, Database } from "lucide-react"
 
 export function App() {
@@ -140,6 +140,21 @@ export function App() {
              currentPeriodEnd: new Date(Date.now() + 30 * 86400000).toISOString()
            };
            saveUserSubscription(sub);
+
+           addInvoice({
+             id: `INV-${new Date().getFullYear()}-FD-${Math.floor(Math.random() * 9000 + 1000)}`,
+             subscriptionId: sub.id,
+             userEmail: currentUser.email,
+             date: new Date().toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }),
+             description: "High-Speed VIP Direct Access - Monthly Recurring",
+             amount: 20.0,
+             currency: "USD",
+             provider: "paypal",
+             status: "Paid",
+             period: `${new Date().toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })} - ${new Date(Date.now() + 30 * 86400000).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`,
+             receiptNumber: `REC-${Math.floor(Math.random() * 900000 + 100000)}`,
+             paypalEmail: currentUser.email,
+           });
         }
         setGoogleDriveCourse(target)
         setBillingCycle("monthly")

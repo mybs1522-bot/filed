@@ -86,60 +86,14 @@ export function getUserInvoices(userEmail?: string): BillingInvoice[] {
     if (raw) {
       const list = JSON.parse(raw) as BillingInvoice[];
       if (Array.isArray(list) && list.length > 0) {
-        return list;
+        return list.filter(inv => inv.id !== "INV-2026-FD-9481" && inv.id !== "INV-2026-FD-8312");
       }
     }
   } catch (e) {
     console.warn("Failed to load invoices", e);
   }
 
-  // Provide initial billing record
-  const initialInvoices: BillingInvoice[] = [
-    {
-      id: "INV-2026-FD-9481",
-      subscriptionId: "P-48G24027EY682341CNK4DIAQ",
-      userEmail: userEmail || "mybs1522@gmail.com",
-      date: new Date(Date.now() - 15 * 86400000).toLocaleDateString("en-US", {
-        month: "short",
-        day: "numeric",
-        year: "numeric",
-      }),
-      description: "High-Speed VIP Direct Access - Monthly Recurring",
-      amount: 20.0,
-      currency: "USD",
-      provider: "paypal",
-      status: "Paid",
-      period: "Sep 12, 2026 – Oct 12, 2026",
-      receiptNumber: "REC-829104",
-      paypalEmail: userEmail || "mybs1522@gmail.com",
-    },
-    {
-      id: "INV-2026-FD-8312",
-      subscriptionId: "sub_1PRJCsGGsoQTkhyv99281a",
-      userEmail: userEmail || "mybs1522@gmail.com",
-      date: new Date(Date.now() - 45 * 86400000).toLocaleDateString("en-US", {
-        month: "short",
-        day: "numeric",
-        year: "numeric",
-      }),
-      description: "High-Speed VIP Direct Access - Monthly Recurring",
-      amount: 20.0,
-      currency: "USD",
-      provider: "stripe",
-      status: "Paid",
-      period: "Aug 12, 2026 – Sep 12, 2026",
-      receiptNumber: "REC-719381",
-      cardLast4: "4242",
-    },
-  ];
-
-  try {
-    localStorage.setItem(STORAGE_KEY_INVOICES, JSON.stringify(initialInvoices));
-  } catch {
-    // ignore
-  }
-
-  return initialInvoices;
+  return [];
 }
 
 /**
