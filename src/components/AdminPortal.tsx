@@ -223,7 +223,27 @@ create policy "Public courses access" on public.courses for all using (true) wit
 
 alter table public.user_logins enable row level security;
 drop policy if exists "Public user_logins access" on public.user_logins;
-create policy "Public user_logins access" on public.user_logins for all using (true) with check (true);`
+create policy "Public user_logins access" on public.user_logins for all using (true) with check (true);
+
+-- 4. Create user_subscriptions table
+create table if not exists public.user_subscriptions (
+  id text primary key,
+  user_email text not null,
+  provider text not null,
+  plan_name text not null,
+  billing_cycle text not null,
+  amount numeric not null default 20.0,
+  currency text not null default 'USD',
+  status text not null,
+  start_date timestamp with time zone not null,
+  current_period_end timestamp with time zone not null,
+  updated_at timestamp with time zone default timezone('utc'::text, now()) not null
+);
+
+-- 5. Enable public access for subscriptions
+alter table public.user_subscriptions enable row level security;
+drop policy if exists "Public subscriptions access" on public.user_subscriptions;
+create policy "Public subscriptions access" on public.user_subscriptions for all using (true) with check (true);`
 
   const handleCopySql = () => {
     navigator.clipboard.writeText(sqlSchema)
