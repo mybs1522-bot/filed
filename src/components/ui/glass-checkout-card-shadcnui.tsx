@@ -287,7 +287,7 @@ export interface GlassCheckoutCardProps {
 }
 
 export function GlassCheckoutCard({
-  amount = 20.0,
+  amount = 12.0,
   billingCycle = "monthly",
   className,
   onPaymentSuccess,

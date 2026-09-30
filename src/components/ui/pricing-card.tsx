@@ -37,9 +37,9 @@ const plans: PlanItem[] = [
     name: "High Speed Download",
     badge: "FASTEST",
     description: "Unlimited High Speed Downloads For Month",
-    monthlyPrice: 20.0,
-    yearlyMonthlyPrice: 16.0,
-    yearlyPrice: 192.0, // Total for 12 months with 20% discount ($16/mo * 12)
+    monthlyPrice: 12.0,
+    yearlyMonthlyPrice: 10.0,
+    yearlyPrice: 120.0, // Total for 12 months with discount ($10/mo * 12)
     isHighlighted: true,
     features: [
       { text: "Unlimited High Speed Downloads For Month", highlight: true },
@@ -136,7 +136,7 @@ export function PricingCard({
           )}
           <span className="relative z-10">Yearly</span>
           <span className="relative z-10 bg-blue-500/20 text-blue-300 border border-blue-500/30 text-[9px] font-extrabold px-1.5 py-0.5 rounded-full uppercase tracking-tight">
-            20% OFF
+            2 MONTHS FREE
           </span>
         </button>
       </div>
@@ -331,7 +331,7 @@ export function PricingCard({
         >
           <span>
             {selectedPlan === "gdrive"
-              ? `Get High Speed Download (${billingCycle === "yearly" ? "$192 / year" : "$20"})`
+              ? `Get High Speed Download (${billingCycle === "yearly" ? "$120 / year" : "$12"})`
               : "Continue with Slow Download"}
           </span>
           <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

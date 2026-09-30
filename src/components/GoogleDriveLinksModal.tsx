@@ -34,7 +34,7 @@ export function GoogleDriveLinksModal({
   if (!isOpen || !course) return null
 
   const isYearly = billingCycle === "yearly"
-  const planAmount = isYearly ? 192.0 : 20.0
+  const planAmount = isYearly ? 120.0 : 12.0
   const planPeriodText = isYearly ? "Unlimited High Speed Downloads For Year" : "Unlimited High Speed Downloads For Month"
 
   const [copied, setCopied] = useState(false)
